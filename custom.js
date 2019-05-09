@@ -1,9 +1,9 @@
 function getAvatarUrl($cell) {
-    return $cell.closest('tr').find('td:eq(1) img').attr('src');
+    return $cell.closest('tr').find('td:eq(2) img').attr('src');
 }
 
 function getMapperName($cell) {
-    return $cell.closest('tr').find('td:eq(2)').text();
+    return $cell.closest('tr').find('td:eq(3)').text();
 }
 
 function getRandomInt(max) {
@@ -28,6 +28,15 @@ function convertImgToDataURLviaCanvas(url, callback, format) {
 }
 
 $(function () {
+    $.tablesorter.addWidget({
+        id: 'numbering',
+        format: function (table) {
+            $('tr', table.tBodies[0]).each(function (i) {
+                $(this).find('td').eq(0).text(i + 1);
+            });
+        }
+    });
+
     // Tablesorter
     $('#mappers').tablesorter({
         theme: 'bootstrap',
@@ -41,10 +50,10 @@ $(function () {
         },
 
         headers: {
-            0: {sorter: 'digit', filter: false},
-            1: {sorter: false, parser: false, filter: false},
-            2: {sorter: 'text'},
-            3: {sorter: 'digit', sortInitialOrder: 'desc'},
+            0: {sorter: false, parser: false, filter: false},
+            1: {sorter: 'digit', filter: false},
+            2: {sorter: false, parser: false, filter: false},
+            3: {sorter: 'text'},
             4: {sorter: 'digit', sortInitialOrder: 'desc'},
             5: {sorter: 'digit', sortInitialOrder: 'desc'},
             6: {sorter: 'digit', sortInitialOrder: 'desc'},
@@ -53,15 +62,16 @@ $(function () {
             9: {sorter: 'digit', sortInitialOrder: 'desc'},
             10: {sorter: 'digit', sortInitialOrder: 'desc'},
             11: {sorter: 'digit', sortInitialOrder: 'desc'},
-            12: {sorter: 'usLongDate'},
-            13: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
-            14: {sorter: 'digit', sortInitialOrder: 'desc'},
+            12: {sorter: 'digit', sortInitialOrder: 'desc'},
+            13: {sorter: 'usLongDate'},
+            14: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
             15: {sorter: 'digit', sortInitialOrder: 'desc'},
-            16: {sorter: false, parser: false, filter: false},
-            17: {sorter: false, parser: false, filter: false}
+            16: {sorter: 'digit', sortInitialOrder: 'desc'},
+            17: {sorter: false, parser: false, filter: false},
+            18: {sorter: false, parser: false, filter: false}
         },
 
-        widgets: ['lazyload', 'filter', 'columns', 'zebra'],
+        widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
 
         widgetOptions: {
             filter_cssFilter: 'form-control',
@@ -70,7 +80,7 @@ $(function () {
             filter_placeholder: {
                 search: 'Num..'
             },
-            columns: ['secondary', 'tertiary'],
+            columns: ['secondary', 'tertiary']
         }
     }).tablesorterPager({
         container: $('.ts-pager'),
