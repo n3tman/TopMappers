@@ -31,7 +31,7 @@ $(function () {
     $.tablesorter.addWidget({
         id: 'numbering',
         format: function (table) {
-            $('tr', table.tBodies[0]).each(function (i) {
+            $('tr:not(.filtered)', table.tBodies[0]).each(function (i) {
                 $(this).find('td').eq(0).text(i + 1);
             });
         }
