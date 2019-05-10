@@ -39,25 +39,25 @@ h4 .fas {
     margin-right: 10px;
 }
 
-th:nth-child(1),
-th:nth-child(2) {
+#mappers th:nth-child(1),
+#mappers th:nth-child(2) {
     width: 52px;
 }
 
-th:nth-child(3) {
+#mappers th:nth-child(3) {
     width: 65px;
 }
 
-th:nth-child(1) .fas,
-th:nth-child(2) .fas,
-th:nth-child(3) .fas,
-th:nth-child(5) .fas,
-th:nth-child(6) .fas,
-th:nth-child(7) .fas {
+#mappers th:nth-child(1) .fas,
+#mappers th:nth-child(2) .fas,
+#mappers th:nth-child(3) .fas,
+#mappers th:nth-child(5) .fas,
+#mappers th:nth-child(6) .fas,
+#mappers th:nth-child(7) .fas {
     margin-right: 0;
 }
 
-th:nth-child(7) .fas + .fas {
+#mappers th:nth-child(7) .fas + .fas {
     margin-left: 7px;
 }
 
@@ -65,52 +65,52 @@ th:nth-child(7) .fas + .fas {
     display: inline;
 }
 
-.table td:nth-child(4) {
+#mappers .table td:nth-child(4) {
     font-weight: bold;
 }
 
-.table td:nth-child(15),
-.table td:nth-child(16),
+#mappers .table td:nth-child(15),
+#mappers .table td:nth-child(16),
 td:nth-child(19) {
     white-space: nowrap;
 }
 
-td:nth-child(13) .badge,
-td:nth-child(20) .badge {
+#mappers td:nth-child(13) .badge,
+#mappers td:nth-child(20) .badge {
     padding: .4em;
 }
 
-td:nth-child(13) .badge {
+#mappers td:nth-child(13) .badge {
     width: 55px;
 }
 
-td:nth-child(20) .badge {
+#mappers td:nth-child(20) .badge {
     width: 85px;
 }
 
-td:nth-child(13) .badge::after,
-td:nth-child(20) .badge::after,
-td:nth-child(20) .badge::before,
+#mappers td:nth-child(13) .badge::after,
+#mappers td:nth-child(20) .badge::after,
+#mappers td:nth-child(20) .badge::before,
 .external::after {
     font-family: 'Font Awesome 5 Free', sans-serif;
     font-size: 0.8rem;
 }
 
-td:nth-child(13) .badge::after,
-td:nth-child(20) .badge::after {
+#mappers td:nth-child(13) .badge::after,
+#mappers td:nth-child(20) .badge::after {
     padding-left: 8px;
 }
 
-td:nth-child(20) .badge::before {
+#mappers td:nth-child(20) .badge::before {
     content: '\f5fd';
     padding-right: 8px;
 }
 
-td:nth-child(13) .badge::after {
+#mappers td:nth-child(13) .badge::after {
     content: '\f0c9';
 }
 
-td:nth-child(20) .badge::after {
+#mappers td:nth-child(20) .badge::after {
     content: '\f019';
 }
 
