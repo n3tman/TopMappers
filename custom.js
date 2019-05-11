@@ -68,6 +68,54 @@ $(function () {
         });
     });
 
+    if ($songTable.length) {
+        $songTable.tablesorter({
+            theme: 'bootstrap',
+
+            headerTemplate: '',
+
+            delayInit: true,
+
+            textExtraction: function (node) {
+                return node.textContent || $(node).text() || '';
+            },
+
+            headers: {
+                0: {sorter: false, parser: false, filter: false},
+                1: {sorter: false, parser: false, filter: false},
+                2: {sorter: 'text'},
+                3: {sorter: 'text'},
+                4: {sorter: 'text'},
+                5: {sorter: 'digit', sortInitialOrder: 'desc'},
+                6: {sorter: 'digit', sortInitialOrder: 'desc'},
+                7: {sorter: 'digit', sortInitialOrder: 'desc'},
+                8: {sorter: 'digit', sortInitialOrder: 'desc'},
+                9: {sorter: 'percent', sortInitialOrder: 'desc'},
+                10: {sorter: 'digit', sortInitialOrder: 'desc'},
+                11: {sorter: 'percent', sortInitialOrder: 'desc'},
+                12: {sorter: 'digit', sortInitialOrder: 'desc'},
+                13: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                14: {sorter: false, parser: false, filter: false},
+                15: {sorter: false, parser: false, filter: false},
+                16: {sorter: false, parser: false, filter: false},
+                17: {sorter: 'text'},
+                18: {sorter: false, parser: false, filter: false}
+            },
+
+            widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
+
+            widgetOptions: {
+                filter_cssFilter: 'form-control',
+                filter_reset: '#reset-filter',
+                filter_searchDelay: 500,
+                filter_placeholder: {
+                    search: 'Num..'
+                },
+                columns: ['secondary', 'tertiary']
+            }
+        });
+    }
+
     // Tablesorter
     if ($mapperTable.length) {
         $mapperTable.tablesorter({

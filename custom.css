@@ -48,7 +48,7 @@ h4 .fas {
 }
 
 #songs th:nth-child(4) {
-    max-width: 500px;
+    width: 500px;
 }
 
 .table th .fas + .fas {
@@ -65,6 +65,7 @@ h4 .fas {
 }
 
 #songs td:nth-child(14),
+#songs td:nth-child(18),
 #mappers td:nth-child(15),
 td:nth-child(16),
 #mappers td:nth-child(19) {
