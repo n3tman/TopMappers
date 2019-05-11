@@ -48,7 +48,7 @@ h4 .fas {
 }
 
 #songs th:nth-child(4) {
-    width: 500px;
+    max-width: 500px;
 }
 
 .table th .fas + .fas {
