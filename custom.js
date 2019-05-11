@@ -58,7 +58,7 @@ $(function () {
         id: 'card-num',
         format: function (table) {
             $('tr:not(.filtered)', table.tBodies[0]).each(function (i) {
-                $(this).find('.card-header').text(i + 1);
+                $(this).find('.counter').text(i + 1);
             });
         }
     });
@@ -202,7 +202,7 @@ $(function () {
                 2: {sorter: 'text'}
             },
 
-            widgets: ['filter', 'card-num'],
+            widgets: ['filter', 'card-num', 'lazyload'],
 
             widgetOptions: {
                 filter_cssFilter: 'form-control',
@@ -213,6 +213,13 @@ $(function () {
                 }
             }
         });
+
+        $playTable.one('appear', '.lazy', function() {
+            $.get('https://api.streamable.com/videos/snilb', function(data) {
+                var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
+                $('.play-video:first').html($html);
+            });
+        })
     }
 
     $table.tablesorterPager({
