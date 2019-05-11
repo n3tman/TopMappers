@@ -218,11 +218,24 @@ $(function () {
         });
 
         $playTable.on('appear', '.lazy', function() {
-            var code = this.dataset.code;
-            $.get('https://api.streamable.com/videos/' + code, function(data) {
-                var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
-                $('#' + code).html($html);
-            });
+            var code = this.dataset.code,
+                playerCode = 'player-' + code;
+
+            if (!$('#' + playerCode).length) {
+                $.get('https://api.streamable.com/videos/' + code, function(data) {
+                    var $html = $('<video-js class="embed-responsive-item vjs-big-play-centered" id="player-' + code + '">');
+                    $('#' + code).html($html);
+                    videojs('player-' + code, {
+                        controls: true,
+                        preload: 'none',
+                        poster: data.thumbnail_url,
+                        sources: [{
+                            src: data.files.mp4.url,
+                            type: 'video/mp4'
+                        }]
+                    });
+                });
+            }
         })
     }
 
