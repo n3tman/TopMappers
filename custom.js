@@ -190,22 +190,25 @@ $(function () {
 
             headerTemplate: '',
 
-            delayInit: true,
-
             textExtraction: function (node) {
-                return node.textContent || $(node).text() || '';
+                return $(node).find('.text').text();
             },
 
             headers: {
-                0: {sorter: false, parser: false, filter: false},
+                0: {sorter: 'text'},
                 1: {sorter: 'text'},
-                2: {sorter: 'text'}
+                2: {sorter: 'usLongDate'}
             },
 
             widgets: ['filter', 'card-num', 'lazyload'],
 
             widgetOptions: {
-                filter_cssFilter: 'form-control',
+                filter_cssFilter: [
+                    'form-control custom-select',
+                    'form-control',
+                    'form-control'
+                ],
+                filter_useParsedData: true,
                 filter_reset: '#reset-filter',
                 filter_searchDelay: 500,
                 filter_placeholder: {
@@ -214,12 +217,12 @@ $(function () {
             }
         });
 
-        $playTable.one('appear', '.lazy', function() {
-            $.get('https://api.streamable.com/videos/snilb', function(data) {
-                var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
-                $('.play-video:first').html($html);
-            });
-        })
+        // $playTable.one('appear', '.lazy', function() {
+        //     $.get('https://api.streamable.com/videos/snilb', function(data) {
+        //         var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
+        //         $('.play-video:first').html($html);
+        //     });
+        // })
     }
 
     $table.tablesorterPager({
