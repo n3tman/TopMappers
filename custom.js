@@ -217,12 +217,13 @@ $(function () {
             }
         });
 
-        // $playTable.one('appear', '.lazy', function() {
-        //     $.get('https://api.streamable.com/videos/snilb', function(data) {
-        //         var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
-        //         $('.play-video:first').html($html);
-        //     });
-        // })
+        $playTable.on('appear', '.lazy', function() {
+            var code = this.dataset.code;
+            $.get('https://api.streamable.com/videos/' + code, function(data) {
+                var $html = $('<video controls class="embed-responsive-item"><source src="' + data.files.mp4.url + '" type="video/mp4"></video>');
+                $('#' + code).html($html);
+            });
+        })
     }
 
     $table.tablesorterPager({

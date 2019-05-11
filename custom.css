@@ -118,7 +118,7 @@ td:nth-child(16),
 .external::after {
     content: '\f35d';
     font-weight: 900;
-    padding-left: 4px;
+    padding-left: 6px;
 }
 
 .external:hover {
@@ -175,12 +175,20 @@ ul {
     border-radius: .4rem;
 }
 
+#testplays .card {
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
 #testplays .card-footer {
     font-weight: 500;
 }
 
 #testplays .card-body {
-    padding: 1rem;
+    padding: 1rem 0 0 0;
+}
+
+#testplays .card-body > .text {
+    margin-bottom: 1rem;
 }
 
 #testplays .avatar,
