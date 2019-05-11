@@ -16,7 +16,7 @@ body {
     max-width: 2048px;
 }
 
-.table {
+.table:not('#testplays') {
     background-color: white;
 }
 
@@ -158,6 +158,30 @@ ul {
     height: .8rem;
     vertical-align: middle;
     margin-top: -2px;
+}
+
+/* Card column */
+
+#testplays .card-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+}
+
+#testplays .tablesorter-filter-row {
+    display: flex;
+}
+
+#testplays .tablesorter-filter-row td {
+    flex: 1 1 25%;
+    width: 25%;
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+
+#testplays td {
+    padding: 0;
+    display: block;
 }
 
 /* Card */
@@ -394,6 +418,14 @@ ul {
     }
 }
 
+@media (min-width: 800px) {
+    #testplays .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
 @media (min-width: 992px) {
     .card.global {
         flex: 0 0 20%;
@@ -418,5 +450,21 @@ ul {
     .form-inline {
         justify-content: center;
         margin-left: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    #testplays .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1600px) {
+    #testplays .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
     }
 }

@@ -30,12 +30,19 @@ function convertImgToDataURLviaCanvas(url, callback, format) {
 $(function () {
     var $mapperTable = $('#mappers'),
         $songTable = $('#songs'),
+        $playTable = $('#testplays'),
         $table;
 
     if ($mapperTable.length) {
         $table = $mapperTable;
-    } else {
+    }
+
+    if ($songTable.length) {
         $table = $songTable;
+    }
+
+    if ($playTable.length) {
+        $table = $playTable;
     }
 
     $.tablesorter.addWidget({
@@ -43,6 +50,15 @@ $(function () {
         format: function (table) {
             $('tr:not(.filtered)', table.tBodies[0]).each(function (i) {
                 $(this).find('td').eq(0).text(i + 1);
+            });
+        }
+    });
+
+    $.tablesorter.addWidget({
+        id: 'card-num',
+        format: function (table) {
+            $('tr:not(.filtered)', table.tBodies[0]).each(function (i) {
+                $(this).find('.card-header').text(i + 1);
             });
         }
     });
@@ -68,6 +84,57 @@ $(function () {
         });
     });
 
+    // Tablesorter: top mappers
+    if ($mapperTable.length) {
+        $mapperTable.tablesorter({
+            theme: 'bootstrap',
+
+            headerTemplate: '',
+
+            delayInit: true,
+
+            textExtraction: function (node) {
+                return node.textContent || $(node).text() || '';
+            },
+
+            headers: {
+                0: {sorter: false, parser: false, filter: false},
+                1: {sorter: 'digit', filter: false},
+                2: {sorter: false, parser: false, filter: false},
+                3: {sorter: 'text'},
+                4: {sorter: 'digit', sortInitialOrder: 'desc'},
+                5: {sorter: 'digit', sortInitialOrder: 'desc'},
+                6: {sorter: 'percent', sortInitialOrder: 'desc'},
+                7: {sorter: 'digit', sortInitialOrder: 'desc'},
+                8: {sorter: 'digit', sortInitialOrder: 'desc'},
+                9: {sorter: 'percent', sortInitialOrder: 'desc'},
+                10: {sorter: 'digit', sortInitialOrder: 'desc'},
+                11: {sorter: 'digit', sortInitialOrder: 'desc'},
+                12: {sorter: 'digit', sortInitialOrder: 'desc'},
+                13: {sorter: 'digit', sortInitialOrder: 'desc'},
+                14: {sorter: 'usLongDate'},
+                15: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                16: {sorter: 'digit', sortInitialOrder: 'desc'},
+                17: {sorter: 'digit', sortInitialOrder: 'desc'},
+                18: {sorter: false, parser: false, filter: false},
+                19: {sorter: false, parser: false, filter: false}
+            },
+
+            widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
+
+            widgetOptions: {
+                filter_cssFilter: 'form-control',
+                filter_reset: '#reset-filter',
+                filter_searchDelay: 500,
+                filter_placeholder: {
+                    search: 'Num..'
+                },
+                columns: ['secondary', 'tertiary']
+            }
+        });
+    }
+
+    // Tablesorter: ranked leaderboards
     if ($songTable.length) {
         $songTable.tablesorter({
             theme: 'bootstrap',
@@ -116,9 +183,9 @@ $(function () {
         });
     }
 
-    // Tablesorter
-    if ($mapperTable.length) {
-        $mapperTable.tablesorter({
+    // Tablesorter: testplays
+    if ($playTable.length) {
+        $playTable.tablesorter({
             theme: 'bootstrap',
 
             headerTemplate: '',
@@ -131,28 +198,11 @@ $(function () {
 
             headers: {
                 0: {sorter: false, parser: false, filter: false},
-                1: {sorter: 'digit', filter: false},
-                2: {sorter: false, parser: false, filter: false},
-                3: {sorter: 'text'},
-                4: {sorter: 'digit', sortInitialOrder: 'desc'},
-                5: {sorter: 'digit', sortInitialOrder: 'desc'},
-                6: {sorter: 'percent', sortInitialOrder: 'desc'},
-                7: {sorter: 'digit', sortInitialOrder: 'desc'},
-                8: {sorter: 'digit', sortInitialOrder: 'desc'},
-                9: {sorter: 'percent', sortInitialOrder: 'desc'},
-                10: {sorter: 'digit', sortInitialOrder: 'desc'},
-                11: {sorter: 'digit', sortInitialOrder: 'desc'},
-                12: {sorter: 'digit', sortInitialOrder: 'desc'},
-                13: {sorter: 'digit', sortInitialOrder: 'desc'},
-                14: {sorter: 'usLongDate'},
-                15: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
-                16: {sorter: 'digit', sortInitialOrder: 'desc'},
-                17: {sorter: 'digit', sortInitialOrder: 'desc'},
-                18: {sorter: false, parser: false, filter: false},
-                19: {sorter: false, parser: false, filter: false}
+                1: {sorter: 'text'},
+                2: {sorter: 'text'}
             },
 
-            widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
+            widgets: ['filter', 'card-num'],
 
             widgetOptions: {
                 filter_cssFilter: 'form-control',
@@ -160,8 +210,7 @@ $(function () {
                 filter_searchDelay: 500,
                 filter_placeholder: {
                     search: 'Num..'
-                },
-                columns: ['secondary', 'tertiary']
+                }
             }
         });
     }

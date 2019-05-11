@@ -1,0 +1,2247 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Top Beat Saber Mappers</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.bootstrap_4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/jquery.tablesorter.pager.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+    <link rel="stylesheet" href="/custom.css">
+</head>
+<body class="d-flex flex-column h-100">
+
+<div class="jumbotron py-4 mb-4 text-center rounded-0">
+    <img src="/img/top-mappers-logo.png" class="img-fluid" alt="Top Mappers Logo">
+</div>
+
+<div class="container-fluid px-4">
+    <div class="card-deck">
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-info-circle"></i>About</h4>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li>All stats are accurate (taken directly from the API) on the date of last update</li>
+                    <li>Table features only Top 1000 mappers for performance reasons</li>
+                    <li>Stats do not account for map collaborations: uploader gets all the fame</li>
+                    <li>Click table headers to sort the data; use <strong>Shift+Click</strong> for multi-column sorting, <strong>Ctrl+Click</strong> to reset the order (or just press the blue button)</li>
+                    <li>Filter inputs support multiple comparison operators: read more and see examples <a href="https://mottie.github.io/tablesorter/docs/example-widget-filter.html"  class="external" target="_blank">here</a><br>For example, enter <code>&gt;100</code> in Num column to leave only rows that have values greater than 100<br>To find more than one name in Text column you can input: <code>rayn*|ryg*</code><br>For Date almost any format can be used, e.g. <code>&gt;=2/14/19</code> or <code>&lt;May 2019</code></li>
+                    <li>Updates will be coming every other week, but at least once a month</li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-calendar-check"></i>Stats Last Updated: <strong>11 May 2019</strong></p>
+            </div>
+        </div>
+        <div class="card shadow-sm global px-0 mx-0">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-globe"></i>Global Stats</h4>
+            </div>
+            <div class="card-body text-total text-center">
+                <p class="mb-2">Total Maps:</p>
+                <p class="h1 mb-4"><span class="badge badge-light">12721</span></p>
+                <p class="mb-2">Total Mappers:</p>
+                <p class="h1 mb-0"><span class="badge badge-light">4386</span></p>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-clock"></i>Since <strong>8 May 2018</strong></p>
+            </div>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-users"></i>Credits & Thanks</h4>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li><span class="discord"><i class="bg-zeekin"></i><strong>Zeekin</strong></span> for <a href="http://www.bootleg-beatsaver.com/authors.html" class="external" target="_blank">original idea</a> and inspiration, <span class="discord"><i class="bg-rorekk"></i><strong>rorekk</strong></span> for <a href="https://beatsaber-songs.herokuapp.com/uploaders"  class="external" target="_blank">Beat Saber Songs</a> (another inspiration), <span class="discord"><i class="bg-elliotttate"></i><strong>elliotttate</strong></span> for creating <a href="https://bsaber.com/" class="external" target="_blank">BSaber</a> and driving the community forward</li>
+                    <li><span class="discord"><i class="bg-xyonico"></i><strong>xyonico</strong></span> for making SongLoader mod, <span class="discord"><i class="bg-kyle"></i><strong>Kyle 1413</strong></span> for taking over and improving it</li>
+                    <li><span class="discord"><i class="bg-skueaks"></i><strong>squeaksies</strong></span> for <a href="https://github.com/squeaksies/MediocreMapper" class="external" target="_blank">MediocreMapper</a> (best mapping tool), <span class="discord"><i class="bg-pbrick"></i><strong>permissionBRICK</strong></span> for EditSaberEnhanced, <span class="discord"><i class="bg-ikeiwa"></i><strong>ikeiwa</strong></span> for EditSaber (original song editor)</li>
+                    <li><span class="discord"><i class="bg-balsa"></i><strong>Balsa</strong></span> for creating <a href="https://beatsaver.com/" class="external" target="_blank">Beat Saver</a>, <span class="discord"><i class="bg-assistant"></i><strong>Assistant</strong></span> for running it, <span class="discord"><i class="bg-andruzz"></i><strong>andruzzzhka</strong></span> for BeatSaverDownloader mod, <span class="discord"><i class="bg-stargazer"></i><strong>StarGazer1258</strong></span> for <a href="https://bsaber.com/beatdrop/" class="external" target="_blank">BeatDrop</a> (song manager)</li>
+                    <li>everyone else mentioned in <a href="https://bsmg.wiki/about" class="external" target="_blank">BSMG Wiki</a> and <strong>all the awesome mappers below!</strong></li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-copyright"></i>TopMappers by <span class="discord"><i class="bg-n3tman"></i><strong>n3tman</strong>#6295</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-4 my-4">
+    <h1 class="text-center mb-4">Testplay Videos (2333 Total)</h1>
+    <div class="table-buttons mb-4 text-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-lg btn-primary" id="reset-sort">Reset Sorting</button>
+            <button type="button" class="btn btn-lg btn-info" id="reset-filter">Reset Filters</button>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-borderless mb-0 d-block" id="testplays">
+            <thead class="thead-dark d-block mb-3">
+            <tr class="d-flex">
+                <th data-toggle="tooltip" title="Row Number" class="flex-fill w-25 mb-0"><div class="tablesorter-header-inner"><i class="fas fa-hashtag mr-0"></i></div></th>
+                <th data-toggle="tooltip" title="Map Name" class="flex-fill w-25 mb-0" data-placeholder="Text.."><div class="tablesorter-header-inner"><i class="fas fa-music"></i>Map Name</div></th>
+                <th data-toggle="tooltip" title="Difficulty" class="flex-fill w-25 mb-0" data-placeholder="Text.."><div class="tablesorter-header-inner"><i class="fas fa-dumbbell"></i>Difficulty</div></th>
+            </tr>
+            </thead>
+            <tbody class="card-columns d-block">
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Milk Crown on Sonnetica - nameless</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Happppy song - SOOOO</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">NUCLEAR-STAR - Camellia</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">G1ll35 d3 R415 - Team Grimoire</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Louder Than Steel - Ryu-5150</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Daisuki, Evolution - Minazuki Airi with Atsushi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hype feat. Such - PSYQUI</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">GHOST - Camellia</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sidetracked Day - VINXIS</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Acid burst - Memme</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Walk This Way! - Kano</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">osu!memories - SakiZ</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Heeartbeeat Oveerheeat!!!! - Camellia feat. Nanahira</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Overkill - RIOT</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Brain Power (SDVX Mix) - NOMA</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">PUMP - YUC&#x27;e</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">YELL! (feat. Moimoi) - DJ Genki &amp; Camellia</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Freedom Dive - v2</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monster - Reol</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Labyrinth - Lapix</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Routine - Silent Siren</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Blue Zenith - xi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">EmbryO - Kabocha</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ascension to Heaven - xi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">RED ZONE - Tatsh &amp; NAOKI</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bluenation - yaseta</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ange du Blanc Pur - ke-ji feat. Nanahira</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Setsuna Imitation (feat. Yurica, Hanatan) - Yairi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">TIERRA - Dj Genki</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">HONESTY - GYZE feat. Ettore Rigotti</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Galactic Symphony - Mandragora</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Avalanche - Memme</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Teo (ft. Hatsune Miku) - Omoi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Tool-Assisted Speedcore - Kobaryo</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Zetsubou Plantation - Yousei Teikoku</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Overkill - RIOT</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">TWISTSTEP - Pa&#x27;s Lam System</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">quaver - dj TAKA</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hentacito - Luis Fonsi ft. Daddy Yankee/S3RL/DaymanOurSavior</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">RELOADED - EGOIST</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Magnetism - M2U</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">g a r d e n (Short Ver.) - DM DOKURO</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body"></div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Quo Vadis - M2U</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Der Wald (kors k Remix) - Erehamonika remixed by kors k</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mare Maris - M2U</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Cycle Hit - KASAI HARCORES</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ALTONA - SOUND HOLIC Vs. SWING HOLIC</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">V for EXTREME - dj TAKA</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">FIRST - AKI AKANE</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Phantasia - Yunosuke</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Two-Faced Lovers feat. Miku - by Wowaka</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Solace of Oblivion - Helblinde</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">CANDYYYLAND (Pa&#x27;s Lam System Remix) - tofubeats</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Halcyon - xi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">HIBANA feat. Hatsune Miku - DECO*27</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Black Emperor - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fallen (Short Ver.) - EGOIST</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sidetracked Day (Short Ver.) - VINXIS</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Wish upon Twin Stars - xi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">DeltaMAX - DM Ashura</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Senpai Notice Me - Camellia ft. Nanahira</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Inferno - 9mm Parabellum Bullet</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">You&#x27;re Everything - P*Light vs Yuyoyuppe</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Future Candy - YUC&#x27;e</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ievan Polkka - Nightcore - NiceToMeetYou</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fallen (Short Ver.) - EGOIST</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ANiMA - Xi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">MariannE (Lanota Edit) - Yooh</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Be Wild - Camellia feat. Yukacco</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Deadly Nostalgia - Zemeth</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monochrome Butterfly - Aitsuki Nakuru</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Midnight - Teikyou</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ParagonX9 - Infiltration - jackscape</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">HONESTY - GYZE feat. Ettore Rigotti</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Stay Alive (Jun Kuroda Bootleg Remix) - EMILIA (CV: Rie Takahashi)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hype feat. Such - PSYQUI</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ouroboros -twin stroke of the end- - Cranky VS MASAKI</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Engage-Rex- - Getty vs DJ DiA</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Big Sky (Agnelli &amp; Nelson Remix) - John O&#x27;Callaghan</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">iLLness LiLin - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Everything will freeze - UNDEAD CORPORATION (mapped by Roffle)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Trusting - Merry (CV: Chika Anzai)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Zettai Tokken Shuchou Shimasu! Hoshi Syoko Solo Remix - Syoko Hoshi (CV: Satsumi Matsuda)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Arcade Busters - cysmix</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ACE FOR ACES - TAGxU1</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Berry Go !! - Freezer (Feat. Kiichigo)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Star Night Snow (Short edit) - n-buna x Orangestar feat. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Inferno - 9mm Parabellum Bullet</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sidetracked Day - VINXIS</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monster - Reol</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">CANDYYYLAND (Pa&#x27;s Lam System Remix) - tofubeats</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">R4V3 B0Y (Rave Boy) - S3RL</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body"></div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Barracuda - Noisestorm</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Koi no Hime Hime Pettanko - *namirin</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">World&#x27;s End, Girl&#x27;s Rondo (Asterisk DnB Remix) - Wakeshima Kanon</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Stereo Future (TV Size) - BiSH</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">UNION (TV Size) - OxT</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Snakey Chantey - Kumi Tanioka</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Belly Flopper - O2i3</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">FIRST - AKI AKANE</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Everlasting Message - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">HE4VEN - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Pray(TV Size) - Chisuga Haruka</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bomb Rush Blush (Smash Ultimate Mix) - Tomoya Ohtani</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Setsuna Imitation (feat. Yurica, Hanatan) - Yairi</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Spectrum - Zedd</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mirai to Mirai - nayutalien ft. Mirai Akari</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sidetracked Day (Short Ver.) - VINXIS</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">City Lights (Pa&#x27;s Lam System Remix) - HyperJuice</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Six Trillion Years and Overnight Story - Roselia</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Made In Love - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Routine - Silent Siren</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rockefeller Street (Nightcore) - Getter Jaani</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Senbonzakura (Short Ver.) - Kradness + Giga-P</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">OKAY - Tokyo Machine</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Endless Tewi-Ma Park - IOSYS</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Real Or Fake - ShinRa-Bansho</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">level One - Dj Striden</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Again - YUI</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Berry Go !! - Freezer (Feat. Kiichigo)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">RELOADED - EGOIST</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monochrome Butterfly - Aitsuki Nakuru</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hoshi ga Matataku Konna Yoru ni - supercell</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Time To Say Goodbye - ft. Casey Lee Williams</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Courage - Yuuki Asuna (CV: Tomatsu Haruka)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Teopacito feat. Will Stetson - Luis Fonsi ft. Daddy Yankee / R3 Music Box / Omoi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">THE BLUE - M.S.S Project</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Chrome Vox - t+pazolite</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bitch Lasagna - PewdiePie</div></td>
+                <td><div class="card-footer text-muted">Easy</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Don&#x27;t say &quot;lazy&quot; - Afterglow</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">CANDYYYLAND (Pa&#x27;s Lam System Remix) - tofubeats</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Black Shout - Roselia</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sendan Life - splake</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Redo (TV Size) - Konomi Suzuki</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hype feat. Such - PSYQUI</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Crocodile Cacophony - Soshi Abe</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BUBBLE TEA - dark cat</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fallen (Short Ver.) - EGOIST</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hammer o Denpa Song ni Shitemita - kana</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Dancing Lasha Tumbai - Verka Serduchka - Fromen</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Indoor Kei Nara Trackmaker - Yunomi &amp; nicamoq</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fairy Tail - Strike Back - Back On</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">La Grange - ZZ Top</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body"></div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Snakey Chantey - Kumi Tanioka</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monster - Reol</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Adieu, to this Lively Graveyard - Stack Bros.</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Death by Glamour - by Toby Fox</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Magnetism - M2U</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Home - Resonance - Electronic Gems</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Senbonzakura (Short Ver.) - Kradness + Giga-P</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Clear Rose - IZMIZM</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Lay Down - Priestess</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Click Bait - Feat. Gl!tch</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">STOPITSOT VIDOSOV - (feat. Max +100500)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Chocolate Planet - Freezer</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">La Grange - ZZ Top</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 5 - How To Save A Life - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Another Dimension - Junghwan Park</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">FIRST - AKI AKANE</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 4 - Elysium Plus - (Charted by M.Rappold</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Solfeggietto - C.P.E. Bach</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Responsibility Response - Izumi Akazawa (CV. Madoka Yonezawa)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">sleepparalysis////////////// - isqa</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Nico Nico Douga Medley - jackscape</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hyadain no Kakata Katamoi-C - (Nichijou OP1) by Hyadain</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hitorigoto -TV MIX- - ClariS</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">EC1-Rio - Netsky Feat. Digital Farm Animals</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Godspeed - Anberlin</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">DotA - Basshunter</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">(can you) understand me? - Komiya Mao</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Soar - Erik McClure</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Happy Synthesizer - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Synthesized Angel - Sakuzyo</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Greenlights Serenade - Omoi ft. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fire Hive - Knife Party</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rendezvous - Scandroid</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">g a r d e n (Short Ver.) - DM DOKURO</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Chaoz Fantasy - ParagonX9</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 4 - So Fabulous!! - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">IGNITE - Aoi Eir</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Swiggity - IZECOLD</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hyadain no Kakata Katamoi-C - (Nichijou OP1) by Hyadain</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Real Or Fake - ShinRa-Bansho</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Greenlights Serenade - Omoi ft. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Game Time - 3LAU, feat. NINJA</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Setsuna Imitation (feat. Yurica, Hanatan) - Yairi</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ai Kotoba III - DECO*27 ft. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Adieu, to this Lively Graveyard - Stack Bros.</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Flat Zone 2 - Kenichi Okuma</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Burn My Dread (Short Ver.) - Persona 3 OST</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">For the Swarm - Avatar</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Our Wrenally - Chart by Kizuflux</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Epic - Tokyo Machine</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Soldiers - Otherwise</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Death by Glamour - by Toby Fox</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Midnight City - M83</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Escape - Netsky feat. darrison</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Blood Hunter - Varien</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Six Trillion Years and Overnight Story - Roselia</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">One More Time - Berlin Child</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">I Apologize - Five Finger Death Punch</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Angelic Angel - Muse / Lantis</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rockefeller Street (Nightcore) - Getter Jaani</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bring Back The Summer - Rain Man</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Final Bowser Theme [Electro Cover] - Super Mario 64</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">No, Thank you! - K-On</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Forbidden - S3RL ft Avanna [Vocaloid]</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Swamp Thing - Da Tweekaz Edit</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Suiryuu no Rokku - Natsuko Nisshoku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Savior of Song (TV Size) - feat. MY FIRST STORY</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">The Writing&#x27;s On The Wall - OK GO</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Digimon - Butterfly - Digimon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Redo - Suzuki Konomi</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hatsune Miku - Senbonzakura (Frontliner Remix) - Scythe</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Struggle - BBbear</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">No No No - TheFatRat</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Tao Ngoi - Jintara Poonlarp</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Luv Letter - DJ Okawari</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">level One - Dj Striden</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 4 - Cool Me Mebbe - (Charted by M.Rappold</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Baby&#x27;s On Fire - Die Antwoord</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Outbreak - Mediks</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Popcorn - METAL version</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sid Metal Legacy - Machinae Supremacy</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">It&#x27;s Not My Time - 3 Doors Down</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Love Me - The 1975</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Song Of Storms - Ephixa</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">That Person&#x27;s Name Is / Boss Battle - Bravely Default</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 3 - Firestorm - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Otter Pop (feat. Hollis) - Shawn Wasabi</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sonic 1 - Star Light Zone (dance remix) - JemenJ (Level by Lman90245)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hole In Your Heart - Royal Blood</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hero ft. Elizaveta (Da Tweekaz &#x27;Guitar Hero&#x27; Mix) - Charted by Adoom</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">NOW - Thats What I Call B.S. VOL.1</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ocarina of Time Medley - Michiko Naruke</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Friend Like Me - Aladdin OST</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Narcissistic Cannibal - Ft. Skrillex and Kill The Noise</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rise - Skillet</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Freestyler - Bomfunk MC</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">13 (Rukkus Remix) - Astronaut</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 2 - Stars - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Gospel of the Throttle - Minutes Til Midnight (Driftors OP)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Omen - By Jamax</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Stay With Me - Echos Remix</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Don&#x27;t say &quot;lazy&quot; - Afterglow</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hand in Hand - Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Clarity (DJ Dil Rmx) - Zedd</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Your Affection (Daisuke Asakura Remix) - Persona 4 Dancing All Night</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Yotsuya-san ni Yoroshiku - Himeringo (Mapped by TheBais)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Suicide Bassline VIP - Mefjus</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">What You Know - Two Door Cinema Club</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Tonight - Sunset Neon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Chemical Plant Zone - Sonic The Hedgehog 2</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Colourful - Kamome Sano</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Milk - Morimori Atsushi</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 3 - Freefall VIP - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hyadain no Joujou Yuujou - Hyadain</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Killing In The Name - Rage Against The Machine</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Jumping All Over The World - Scooter</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Burnt Rice - Shawn Wasabi</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Goofy Goober - Spanch Bob</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sacred Shapes - Arcane Roots</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 4 - Come &amp; Get It - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">A New Frontier - VA-11 HALL-A</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sono gunjo-ga ito-shikatta youdatta - from CHUNITHM</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Dont Let Me Down (illenium Remix) - unknow</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">We No Speak Americano - BlackBlazon / Fromen</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Good Time - Owl City</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Death To All But Metal - Steel Panther</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mr. Blue Sky - Electric Light Orchestra</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">In Between - Charted by PyroBillie</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Music Is My Saviour - S3RL feat Mixie Moon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bring Back The Summer - Rain Man</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">News 39 - MitchieM</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Renegade - phoenix7700</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Everytime we touch - Radio Edit - Cascada</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rx (Medicate) - Theory of a Deadman</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Qubism - Chart by Moriik</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Indestructible - Disturbed</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">VORACITY - OVERLOAD III OP</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">We Dont Bite - JTMACHINIMA</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Majesty (ft. Veela) - Ben Moon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">The Beginning - Yohske Yamamoto</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Break The Silence - Monstercat</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Koi wa chaos no shimobenari - Love is the Servant of Chaos</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mikazuki (sped up ver.) - Sayuri</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">moons. - shibuya</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Silicon XX - S3RL ft. Nikolett</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Feel the melody - S3RL</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">MAYDAY - TheFatRat &amp; Laura Brehm</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Kickstart My Heart - Motley Crue - TheClassicYuck</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH 2 - All I Know - (Charted by M.Rappold</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">KDV (feat. Shug) - MISSIO</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Crack Traxxxx - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Let Me Hear - Fear, and Loathing in Las Vegas</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Tieduprightnow - Parcels</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">I Want You - DJMAX</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">A-Punk - Vampire Weekend</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hoshi ga Matataku Konna Yoru ni - supercell</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">B.B.K.K.B.K.K. - nora2r</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Light - San Holo</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Peanut Butter Jelly Time - The Buckwheat Boyz</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">The Nobodies - modded by Tzahrkiya</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Pretty Fly - The Offspring</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Surface - Dimrain47</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Headless Beast - Pause Ahead Side A - Bill Kiley</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Little Drop - Dropgun</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Graves - Chvrches</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Summer Of The Occult - Seven Lions (Map by MentalEdge)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Toca - Carnage feat Timmy Trumpet &amp; KSHMR</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">ASGORE/Bergentruckung - Dj Jo REMIX</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rip and Tear - Mapped by Samson Davis</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mighty - Caravan Palace ft. JFTH</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">UTAMI - BOUGENVILLA</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Monster - Reol</div></td>
+                <td><div class="card-footer text-muted">Normal</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">KDV (feat. Shug) - MISSIO</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rock da Juice - The Dude</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Go Fck Yourself - Two Feet</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Make A Mess - Matt and Kim</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Click Bait - Feat. Gl!tch</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">RED ZONE - BBbear</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">NZT48 - I See Stars</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Recover - Chvrches</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sleepyhead - Passion Pit</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Devastator - For Today</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Bubble Pop - Hyuna</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Blank Space - I Prevail</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Eins Zwei Polizei - Biotronix</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Shinzou wo Sasageyo - Linked Horizon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Closer - Lemaitre</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Without You (Arcade Game Style) - Avicii (Afishal Remix)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body"></div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Infected - Sickick</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Runaway Baby - Bruno Mars</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hero ft. Elizaveta (Da Tweekaz &#x27;Guitar Hero&#x27; Mix) - Charted by Adoom</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Croatian Rhapsody - The Piano Player</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Lost Frequincies - Are You With me - Are You With Me</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Professional Griefers - Deadmau5</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hotel Moonside - Kanade Hayami</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">devstack - DiD - devstackmusic</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body"></div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Frowny Face (Douster Remix) - Gucci Mane</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Chaoz Japan - Castle Crashers - ParagonX9</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Overlord 2 Opening - Delta</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Croatian Rhapsody - The Piano Player</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Waiting For Love - Avicii</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Defending Yellow River - The Yellow River Chorus</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Prince of the World - Heavenly</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">iLLness LiLin - Chart by Mystikmol</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Kipod Riot Remix - Infected Mushroom</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Los! Los! Los! [TV size] - Tanya Degurechaff (Aoi Yuuki)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Second Heaven - BBbear</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Never Gonna - (Extended Mix)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Stuck In The Middle - Stealer&#x27;s Wheel</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Metroid Prime - Main Theme (Krale Remix) - Kenji Yamamoto</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">What Is Love - Haddaway</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hamster Dance - Porcuspine</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Fake Love - BTS</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sangria Wine - Camila Cabello, Pharrell Williams</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Thrilling0One Way - Aquors / Lantis</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Pegboard Nerds - Party Freaks - Cyberghostde</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hyouri Ittai - 0kagamine Rin Len0</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">MegaloBox Main Theme Song - Mabanua</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Glad You Came (Cover) - We Came As Romans</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Dirty Vibe - with Diplo, CL, &amp; G-Dragon</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Liberation - Harold van Lennep</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Mischievous Sensation - ShinRa-Bansho</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Good Times Roll - Griz x Big Gigantic</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Wake Me Up When September Ends - Green Day</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Stutter - Marianas Trench</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Awaken - Dethklok - Arulas</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">When It Falls - RWBY Vol. 3 Opening</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Sonic 2 - Special Stage (Dance Remix) - JemenJ (Level by Lman90245)</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Don&#x27;t Say &quot;Lazy&quot; - K-On</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">World&#x27;s End, Girl&#x27;s Rondo (Asterisk DnB Remix) - Wakeshima Kanon</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Megalovania - Toby Fox</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Path - Apocalyptica</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Lethargy - Bastille</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Cathedral Pictures - Animusic</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">FFVII - Hurry Faster - Nobuo Uematsu</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Kyouran Hey Kids!! - Noragami Aragoto Opening</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Synthesized Angel - Sakuzyo</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Lost Woods (Ephixa Remix) - Zelda</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Disco Yes - Tom Misch</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Alex S. - My Little Pony Intro (Alex S. Glitch Remix) - Alex S.</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Always - Panama</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Silver Moon - Donkeyboy</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Senbonzakura - ft. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Battle! (Lorekeeper Zinnia) - Shota Kageyama</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Pimped Out Getaway - Payday 2 Soundtrack</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rone - Bye Bye Macadam - Quintus</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Lean On (feat. M0) - Major Lazer &amp; DJ Snake</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Disbelief Hardmode Phase 4 - Hopes of the Heart</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Buttonmasher - chart by Moriik</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">I Need a Docter - Sex Whales Remix</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Crypteque -Map by Batteredburrito - Chipzel</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Cross Time - Brandy</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">a starlit night - MAMAMU</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Life Will Change - Persona 5 OST</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Angels &amp; Demons - D-BLOCK &amp; S-TE-FAN (Charted By Adoom)</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Test Drive - John Powell</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">We Are Number One - LazyTown</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">rockstar ft. 21 Savage - Post Malone</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">[Hard Dance] Stonebank Be Alright - Monstercat</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Freaks - Timmy Trumpet &amp; Savage</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Hallelujah Essaim - Gabriel Dropout Cast</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Flash Funk - Marshmello Remix</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Kill It 4 The Kids - feat. AWOLNATION, Rock City</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Telephone - Lady Gaga</div></td>
+                <td><div class="card-footer text-muted">Hard</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">BTH - Boundless - (Charted by M.Rappold)</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Work - Bossfight</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Wannabe - Spice Girls</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Ghost Rule - DECO*27 ft. Hatsune Miku</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Engage - TuneSquad</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Devil Trigger - Ali Edwards - Beerman</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Master of Your Fate - Teen Titans</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">Rap God (Explicit) - Eminem</div></td>
+                <td><div class="card-footer text-muted">Expert+</div></td>
+            </tr>
+            <tr class="card">
+                <td><div class="card-header"></div></td>
+                <td><div class="card-body">What is Love - Haddaway</div></td>
+                <td><div class="card-footer text-muted">Expert</div></td>
+            </tr>
+            </tbody>
+            <tfoot class="d-block">
+            <tr class="d-block">
+                <th class="ts-pager py-3 d-block mb-0" colspan="3">
+                    <div class="form-inline">
+                        <div class="btn-group btn-group-sm mx-1" role="group">
+                            <button type="button" class="btn btn-secondary first" title="First Page"><i class="fas fa-fast-backward"></i></button>
+                            <button type="button" class="btn btn-secondary prev" title="Previous Page"><i class="fas fa-step-backward"></i></button>
+                        </div>
+                        <span class="pagedisplay"></span>
+                        <div class="btn-group btn-group-sm mx-1" role="group">
+                            <button type="button" class="btn btn-secondary next" title="Next Page"><i class="fas fa-step-forward"></i></button>
+                            <button type="button" class="btn btn-secondary last" title="Last Page"><i class="fas fa-fast-forward"></i></button>
+                        </div>
+                        <select class="form-control-sm custom-select px-4 pagesize" title="Page Size">
+                            <option value="4">4</option>
+                            <option selected="selected" value="12">12</option>
+                            <option value="20">20</option>
+                            <option value="32">32</option>
+                            <option value="64">64</option>
+                        </select>
+                        <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Page Number"></select>
+                    </div>
+                </th>
+            </tr>
+            </tfoot class="d-block">
+        </table>
+    </div>
+</div>
+
+<div class="text-muted py-4 text-center bg-dark mt-auto">
+    <a href="#" id="scroll-top" class="h4 text-light"><i class="fas fa-chevron-up"></i> Back to Top <i class="fas fa-chevron-up"></i></a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.combined.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/extras/jquery.tablesorter.pager.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/widgets/widget-lazyload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+<script src="/custom.js"></script>
+
+</body>
+</html>
