@@ -294,69 +294,73 @@ $(function () {
                     var listArray = [];
 
                     pidArray.forEach(function (pid) {
-                        listArray.push({
-                            sources: [{
-                                src: playerDb[pid].url,
-                                type: 'video/mp4'
-                            }],
-                            poster: playerDb[pid].thumb
-                        })
+                        if (playerDb[pid]) {
+                            listArray.push({
+                                sources: [{
+                                    src: playerDb[pid].url,
+                                    type: 'video/mp4'
+                                }],
+                                poster: playerDb[pid].thumb
+                            })
+                        }
                     });
 
                     pidArray.forEach(function (pid) {
-                        var index = pidArray.indexOf(pid),
-                            player = videojs.players[pid],
-                            total = pidArray.length,
+                        if (playerDb[pid]) {
+                            var index = pidArray.indexOf(pid),
+                                player = videojs.players[pid],
+                                total = pidArray.length,
 
-                            Button = videojs.getComponent('Button'),
+                                Button = videojs.getComponent('Button'),
 
-                            PrevButton = videojs.extend(Button, {
-                                constructor: function () {
-                                    Button.apply(this, arguments);
-                                    this.addClass('fas');
-                                    this.addClass('fa-step-backward');
-                                    this.controlText('Previous');
-                                },
+                                PrevButton = videojs.extend(Button, {
+                                    constructor: function () {
+                                        Button.apply(this, arguments);
+                                        this.addClass('fas');
+                                        this.addClass('fa-step-backward');
+                                        this.controlText('Previous');
+                                    },
 
-                                handleClick: function () {
-                                    player.playlist.previous();
-                                }
-                            }),
+                                    handleClick: function () {
+                                        player.playlist.previous();
+                                    }
+                                }),
 
-                            NextButton = videojs.extend(Button, {
-                                constructor: function () {
-                                    Button.apply(this, arguments);
-                                    this.addClass('fas');
-                                    this.addClass('fa-step-forward');
-                                    this.controlText('Next');
-                                },
+                                NextButton = videojs.extend(Button, {
+                                    constructor: function () {
+                                        Button.apply(this, arguments);
+                                        this.addClass('fas');
+                                        this.addClass('fa-step-forward');
+                                        this.controlText('Next');
+                                    },
 
-                                handleClick: function () {
-                                    player.playlist.next();
+                                    handleClick: function () {
+                                        player.playlist.next();
+                                    }
+                                });
+
+                            videojs.registerComponent('NextButton', NextButton);
+                            videojs.registerComponent('PrevButton', PrevButton);
+                            player.getChild('controlBar').addChild('PrevButton', {}, 0);
+                            player.getChild('controlBar').addChild('NextButton', {}, 2);
+
+                            player.playlist(listArray, index);
+                            player.playlist.autoadvance(0);
+
+                            player.on('playlistitem', function () {
+                                var ind = player.playlist.currentIndex(),
+                                    id = pidArray[ind];
+
+                                setOverlay(
+                                    player, ind + 1, total,
+                                    playerDb[id].author, playerDb[id].title
+                                );
+
+                                if (this.hasStarted_) {
+                                    player.userActive(true);
                                 }
                             });
-
-                        videojs.registerComponent('NextButton', NextButton);
-                        videojs.registerComponent('PrevButton', PrevButton);
-                        player.getChild('controlBar').addChild('PrevButton', {}, 0);
-                        player.getChild('controlBar').addChild('NextButton', {}, 2);
-
-                        player.playlist(listArray, index);
-                        player.playlist.autoadvance(0);
-
-                        player.on('playlistitem', function () {
-                            var ind = player.playlist.currentIndex(),
-                                id = pidArray[ind];
-
-                            setOverlay(
-                                player, ind + 1, total,
-                                playerDb[id].author, playerDb[id].title
-                            );
-
-                            if (this.hasStarted_) {
-                                player.userActive(true);
-                            }
-                        });
+                        }
                     });
                 }
             }, 500);
