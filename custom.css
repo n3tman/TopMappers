@@ -463,6 +463,45 @@ ul {
     background: url('/img/sprite.png') -146px -2px;
 }
 
+/* VideoJS */
+
+.video-js .vjs-overlay {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 2rem;
+}
+
+.video-js .vjs-overlay-background {
+    background-color: rgba(43, 51, 63, .7);
+    width: auto;
+    padding: 1rem 5rem;
+    margin-top: 2rem;
+    margin-right: 4rem;
+}
+
+.vjs-fullscreen .vjs-control-bar {
+    font-size: 1.5rem;
+}
+
+.vjs-fullscreen.vjs-has-started .vjs-overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .1s;
+}
+
+.vjs-fullscreen.vjs-user-inactive.vjs-playing .vjs-overlay {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+}
+
+#testplays .card.border-primary {
+    border-width: 2px;
+}
+
 @media (min-width: 576px) {
     .card-deck {
         flex-flow: column nowrap;

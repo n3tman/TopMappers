@@ -185,6 +185,20 @@ $(function () {
 
     // Tablesorter: testplays
     if ($playTable.length) {
+        var resetPlayer = function(vid) {
+            vid.pause();
+            vid.currentTime(0);
+            vid.controlBar.hide();
+            vid.posterImage.show();
+            vid.bigPlayButton.show();
+
+            vid.one('play', function() {
+                vid.posterImage.hide();
+                vid.controlBar.show();
+                vid.bigPlayButton.hide();
+            });
+        };
+
         $playTable.tablesorter({
             theme: 'bootstrap',
 
@@ -203,29 +217,26 @@ $(function () {
             widgets: ['filter', 'card-num', 'lazyload'],
 
             widgetOptions: {
-                filter_cssFilter: [
-                    'form-control custom-select',
-                    'form-control',
-                    'form-control'
-                ],
+                filter_cssFilter: 'form-control',
                 filter_useParsedData: true,
                 filter_reset: '#reset-filter',
-                filter_searchDelay: 500,
-                filter_placeholder: {
-                    search: 'Num..'
-                }
+                filter_searchDelay: 500
             }
         });
 
         $playTable.on('appear', '.lazy', function() {
             var code = this.dataset.code,
+                author = $(this).parent().next().text(),
                 playerCode = 'player-' + code;
+
+            // console.log('fired: ' + new Date().getTime());
 
             if (!$('#' + playerCode).length) {
                 $.get('https://api.streamable.com/videos/' + code, function(data) {
                     var $html = $('<video-js class="embed-responsive-item vjs-big-play-centered" id="player-' + code + '">');
                     $('#' + code).html($html);
-                    videojs('player-' + code, {
+
+                    var player = videojs('player-' + code, {
                         controls: true,
                         preload: 'none',
                         poster: data.thumbnail_url,
@@ -233,6 +244,34 @@ $(function () {
                             src: data.files.mp4.url,
                             type: 'video/mp4'
                         }]
+                    });
+
+                    // Add overlay with author and title
+                    player.overlay({
+                        content: '<strong>' + author + '</strong>: ' + data.title,
+                        align: 'top-right'
+                    });
+
+                    // Allow only one video to be played
+                    player.on('play', function() {
+                        var id = this.tagAttributes.id,
+                            bClass = 'border-primary';
+
+                        // Highlight card with playing vidoe
+                        $('.' + bClass).removeClass(bClass);
+                        $('#' + id).closest('.card').addClass(bClass);
+
+                        for (id in videojs.players) {
+                            var vid = videojs.players[id];
+                            if (this.id_ !== vid.id_ && vid.hasStarted_) {
+                                resetPlayer(vid);
+                                vid.hasStarted_ = false;
+                            }
+                        }
+                    });
+
+                    player.on('ended', function () {
+                        resetPlayer(player);
                     });
                 });
             }
