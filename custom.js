@@ -189,6 +189,12 @@ $(function () {
 
             pidArray = [],
 
+            autoplay = true,
+
+            reloadPlayers = function() {
+                $playTable.trigger('pagerChange').trigger('pagerComplete');
+            },
+
             setActiveCard = function (pid) {
                 var bClass = 'border-primary';
                 $('.' + bClass).removeClass(bClass);
@@ -284,40 +290,75 @@ $(function () {
             }, 500),
 
             allLoaded = _.debounce(function () {
-                var listArray = [];
+                if (autoplay) {
+                    var listArray = [];
 
-                pidArray.forEach(function (pid) {
-                    listArray.push({
-                        sources: [{
-                            src: playerDb[pid].url,
-                            type: 'video/mp4'
-                        }],
-                        poster: playerDb[pid].thumb
-                    })
-                });
-
-                pidArray.forEach(function (pid) {
-                    var index = pidArray.indexOf(pid),
-                        player = videojs.players[pid],
-                        total = pidArray.length;
-
-                    player.playlist(listArray, index);
-                    player.playlist.autoadvance(0);
-
-                    player.on('playlistitem', function () {
-                        var ind = player.playlist.currentIndex(),
-                            id = pidArray[ind];
-
-                        setOverlay(
-                            player, ind + 1, total,
-                            playerDb[id].author, playerDb[id].title
-                        );
-
-                        if (this.hasStarted_) {
-                            player.userActive(true);
-                        }
+                    pidArray.forEach(function (pid) {
+                        listArray.push({
+                            sources: [{
+                                src: playerDb[pid].url,
+                                type: 'video/mp4'
+                            }],
+                            poster: playerDb[pid].thumb
+                        })
                     });
-                });
+
+                    pidArray.forEach(function (pid) {
+                        var index = pidArray.indexOf(pid),
+                            player = videojs.players[pid],
+                            total = pidArray.length,
+
+                            Button = videojs.getComponent('Button'),
+
+                            PrevButton = videojs.extend(Button, {
+                                constructor: function () {
+                                    Button.apply(this, arguments);
+                                    this.addClass('fas');
+                                    this.addClass('fa-step-backward');
+                                    this.controlText('Previous');
+                                },
+
+                                handleClick: function () {
+                                    player.playlist.previous();
+                                }
+                            }),
+
+                            NextButton = videojs.extend(Button, {
+                                constructor: function () {
+                                    Button.apply(this, arguments);
+                                    this.addClass('fas');
+                                    this.addClass('fa-step-forward');
+                                    this.controlText('Next');
+                                },
+
+                                handleClick: function () {
+                                    player.playlist.next();
+                                }
+                            });
+
+                        videojs.registerComponent('NextButton', NextButton);
+                        videojs.registerComponent('PrevButton', PrevButton);
+                        player.getChild('controlBar').addChild('PrevButton', {}, 0);
+                        player.getChild('controlBar').addChild('NextButton', {}, 2);
+
+                        player.playlist(listArray, index);
+                        player.playlist.autoadvance(0);
+
+                        player.on('playlistitem', function () {
+                            var ind = player.playlist.currentIndex(),
+                                id = pidArray[ind];
+
+                            setOverlay(
+                                player, ind + 1, total,
+                                playerDb[id].author, playerDb[id].title
+                            );
+
+                            if (this.hasStarted_) {
+                                player.userActive(true);
+                            }
+                        });
+                    });
+                }
             }, 500);
 
 
@@ -379,6 +420,25 @@ $(function () {
             }
         }).on('pagerComplete', function () {
             reloadVideos();
+        });
+
+        $('#autoplay').click(function () {
+            var $this = $(this);
+            $this.toggleClass('btn-success btn-secondary');
+
+            if ($this.hasClass('btn-success')) {
+                $this.text('Autoplay Enabled');
+                autoplay = true;
+            } else {
+                $this.text('Autoplay Disabled');
+                autoplay = false;
+            }
+
+            reloadPlayers();
+        });
+
+        $('#reload').click(function () {
+           reloadPlayers();
         });
     }
 
