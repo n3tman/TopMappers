@@ -187,6 +187,19 @@ $(function () {
     if ($playTable.length) {
         var playerDb = {},
 
+            setActiveCard = function (pid) {
+                var bClass = 'border-primary';
+                $('.' + bClass).removeClass(bClass);
+                $('#' + pid).closest('.card').addClass(bClass);
+            },
+
+            setOverlay = function (player, author, title) {
+                player.overlay({
+                    content: '<strong>' + author + '</strong>: ' + title,
+                    align: 'top-right'
+                });
+            },
+
             resetPlayer = function (vid) {
                 vid.pause();
                 vid.currentTime(0);
@@ -201,43 +214,44 @@ $(function () {
                 });
             },
 
-            initPlayer = function (code, thumb, url, author, title) {
-                var $html = $('<video-js class="embed-responsive-item vjs-big-play-centered" id="player-' + code + '">');
-                $('#' + code).html($html);
+            pidArray = [],
 
-                if (!playerDb[code]) {
-                    playerDb[code] = {};
+            initPlayer = function (pid, thumb, url, author, title) {
+                var $html = $('<video-js class="embed-responsive-item vjs-big-play-centered" id="' + pid + '">'),
+                    playerContainer = '#' + pid.replace('player-', '');
+
+                $(playerContainer).html($html);
+
+                if (!playerDb[pid]) {
+                    playerDb[pid] = {};
                 }
 
-                playerDb[code].thumb = thumb;
-                playerDb[code].url = url;
-                playerDb[code].author = author;
-                playerDb[code].title = title;
+                playerDb[pid].thumb = thumb;
+                playerDb[pid].url = url;
+                playerDb[pid].author = author;
+                playerDb[pid].title = title;
 
-                var player = videojs('player-' + code, {
+                var player = videojs(pid, {
                     controls: true,
                     preload: 'none',
                     poster: thumb,
                     sources: [{src: url, type: 'video/mp4'}]
                 });
 
-                // Add overlay with author and title
-                player.overlay({
-                    content: '<strong>' + author + '</strong>: ' + title,
-                    align: 'top-right'
-                });
+                setOverlay(player, author, title);
 
                 // Allow only one video to be played
                 player.on('play', function () {
-                    var id = this.tagAttributes.id,
-                        bClass = 'border-primary';
+                    var id = this.tagAttributes.id;
 
-                    // Highlight card with playing vidoe
-                    $('.' + bClass).removeClass(bClass);
-                    $('#' + id).closest('.card').addClass(bClass);
+                    if (!this.autoplay()) {
+                        this.autoplay(true);
+                    }
 
-                    for (id in videojs.players) {
-                        var vid = videojs.players[id];
+                    setActiveCard(id);
+
+                    for (var pid in videojs.players) {
+                        var vid = videojs.players[pid];
                         if (vid && this.id_ !== vid.id_ && vid.hasStarted_) {
                             resetPlayer(vid);
                             vid.hasStarted_ = false;
@@ -248,7 +262,55 @@ $(function () {
                 player.on('ended', function () {
                     resetPlayer(player);
                 });
-            };
+
+                allLoaded();
+            },
+
+            reloadVideos = _.debounce(function () {
+                pidArray = [];
+
+                $('tr:visible .embed-responsive').each(function () {
+                    var pid = 'player-' + this.id;
+                    pidArray.push(pid);
+
+                    if (playerDb[pid] && !playerDb[pid].loaded) {
+                        initPlayer(
+                            pid, playerDb[pid].thumb, playerDb[pid].url,
+                            playerDb[pid].author, playerDb[pid].title
+                        );
+
+                        playerDb[pid].loaded = true;
+                    }
+                });
+            }, 500),
+
+            allLoaded = _.debounce(function () {
+                var listArray = [];
+
+                pidArray.forEach(function (pid) {
+                    listArray.push({
+                        sources: [{
+                            src: playerDb[pid].url,
+                            type: 'video/mp4'
+                        }],
+                        poster: playerDb[pid].thumb
+                    })
+                });
+
+                pidArray.forEach(function (pid) {
+                    var index = pidArray.indexOf(pid),
+                        player = videojs.players[pid];
+
+                    player.playlist(listArray, index);
+                    player.playlist.autoadvance(0);
+
+                    player.on('playlistitem', function () {
+                        if (this.hasStarted_) {
+                            debugger;
+                        }
+                    });
+                });
+            }, 500);
 
 
         $playTable.tablesorter({
@@ -278,42 +340,37 @@ $(function () {
 
         $playTable.on('appear', '.lazy', function () {
             var code = this.dataset.code,
+                pid = 'player-' + code,
                 author = $(this).parent().next().text();
 
-            if (!playerDb[code]) {
-                playerDb[code] = {};
+            if (!playerDb[pid]) {
+                playerDb[pid] = {};
             }
 
-            if (!playerDb[code].loaded) {
+            if (!playerDb[pid].loaded) {
                 $.get('https://api.streamable.com/videos/' + code, function (data) {
                     // console.log('fired: ' + code);
                     initPlayer(
-                        code, data.thumbnail_url, data.files.mp4.url, author, data.title
+                        pid, data.thumbnail_url, data.files.mp4.url, author, data.title
                     );
                 });
             }
 
-            playerDb[code].loaded = true;
+            playerDb[pid].loaded = true;
         });
 
         $playTable.on('pagerChange', function () {
-            for (id in videojs.players) {
-                var vid = videojs.players[id];
+            for (var pid in videojs.players) {
+                var vid = videojs.players[pid];
+
                 if (vid) {
-                    videojs.players[id].dispose();
+                    videojs.players[pid].dispose();
+                    playerDb[pid].loaded = false;
                     // console.log('disposed: ' + id);
                 }
             }
         }).on('pagerComplete', function () {
-            $('tr:visible .embed-responsive').each(function() {
-                var id = this.id;
-                if (playerDb[id]) {
-                    initPlayer(
-                        id, playerDb[id].thumb, playerDb[id].url,
-                        playerDb[id].author, playerDb[id].title
-                    );
-                }
-            });
+            reloadVideos();
         });
     }
 
