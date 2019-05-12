@@ -187,15 +187,17 @@ $(function () {
     if ($playTable.length) {
         var playerDb = {},
 
+            pidArray = [],
+
             setActiveCard = function (pid) {
                 var bClass = 'border-primary';
                 $('.' + bClass).removeClass(bClass);
                 $('#' + pid).closest('.card').addClass(bClass);
             },
 
-            setOverlay = function (player, author, title) {
+            setOverlay = function (player, index, total, author, title) {
                 player.overlay({
-                    content: '<strong>' + author + '</strong>: ' + title,
+                    content: '[' + index + '/' + total + '] <strong>' + author + '</strong>: ' + title,
                     align: 'top-right'
                 });
             },
@@ -203,6 +205,7 @@ $(function () {
             resetPlayer = function (vid) {
                 vid.pause();
                 vid.currentTime(0);
+
                 vid.controlBar.hide();
                 vid.posterImage.show();
                 vid.bigPlayButton.show();
@@ -213,8 +216,6 @@ $(function () {
                     vid.bigPlayButton.hide();
                 });
             },
-
-            pidArray = [],
 
             initPlayer = function (pid, thumb, url, author, title) {
                 var $html = $('<video-js class="embed-responsive-item vjs-big-play-centered" id="' + pid + '">'),
@@ -237,8 +238,6 @@ $(function () {
                     poster: thumb,
                     sources: [{src: url, type: 'video/mp4'}]
                 });
-
-                setOverlay(player, author, title);
 
                 // Allow only one video to be played
                 player.on('play', function () {
@@ -299,14 +298,23 @@ $(function () {
 
                 pidArray.forEach(function (pid) {
                     var index = pidArray.indexOf(pid),
-                        player = videojs.players[pid];
+                        player = videojs.players[pid],
+                        total = pidArray.length;
 
                     player.playlist(listArray, index);
                     player.playlist.autoadvance(0);
 
                     player.on('playlistitem', function () {
+                        var ind = player.playlist.currentIndex(),
+                            id = pidArray[ind];
+
+                        setOverlay(
+                            player, ind + 1, total,
+                            playerDb[id].author, playerDb[id].title
+                        );
+
                         if (this.hasStarted_) {
-                            debugger;
+                            player.userActive(true);
                         }
                     });
                 });
