@@ -499,7 +499,7 @@ ul {
 }
 
 #testplays .card.border-primary {
-    border-width: 2px;
+    box-shadow: 0 .2rem .2rem rgba(0, 123, 255, .4) !important;
 }
 
 @media (min-width: 576px) {
