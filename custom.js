@@ -339,10 +339,12 @@ $(function () {
                                     }
                                 });
 
-                            videojs.registerComponent('NextButton', NextButton);
-                            videojs.registerComponent('PrevButton', PrevButton);
-                            player.getChild('controlBar').addChild('PrevButton', {}, 0);
-                            player.getChild('controlBar').addChild('NextButton', {}, 2);
+                            if (!videojs.getComponent('NextButton')) {
+                                videojs.registerComponent('NextButton', NextButton);
+                                videojs.registerComponent('PrevButton', PrevButton);
+                                player.getChild('controlBar').addChild('PrevButton', {}, 0);
+                                player.getChild('controlBar').addChild('NextButton', {}, 2);
+                            }
 
                             player.playlist(listArray, index);
                             player.playlist.autoadvance(0);
@@ -402,7 +404,7 @@ $(function () {
 
             if (!playerDb[pid].loaded) {
                 $.get('https://api.streamable.com/videos/' + code, function (data) {
-                    // console.log('fired: ' + code);
+                    console.log('fired: ' + pid);
                     initPlayer(
                         pid, data.thumbnail_url, data.files.mp4.url, author, data.title
                     );
@@ -419,7 +421,7 @@ $(function () {
                 if (vid) {
                     videojs.players[pid].dispose();
                     playerDb[pid].loaded = false;
-                    // console.log('disposed: ' + id);
+                    console.log('disposed: ' + pid);
                 }
             }
         }).on('pagerComplete', function () {
