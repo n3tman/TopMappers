@@ -191,7 +191,7 @@ $(function () {
 
             autoplay = true,
 
-            reloadPlayers = function() {
+            reloadPlayers = function () {
                 $playTable.trigger('pagerChange').trigger('pagerComplete');
             },
 
@@ -278,7 +278,7 @@ $(function () {
                     var pid = 'player-' + this.id;
                     pidArray.push(pid);
 
-                    if (playerDb[pid] && !playerDb[pid].loaded) {
+                    if (playerDb[pid] && !playerDb[pid].loaded && !playerDb[pid].error) {
                         initPlayer(
                             pid, playerDb[pid].thumb, playerDb[pid].url,
                             playerDb[pid].author, playerDb[pid].title
@@ -291,55 +291,58 @@ $(function () {
 
             allLoaded = _.debounce(function () {
                 if (autoplay) {
-                    var listArray = [];
+                    var listArray = [],
+                        pidFiltered = [];
 
                     pidArray.forEach(function (pid) {
-                        if (playerDb[pid]) {
+                        if (playerDb[pid] && !playerDb[pid].error) {
                             listArray.push({
                                 sources: [{
                                     src: playerDb[pid].url,
                                     type: 'video/mp4'
                                 }],
                                 poster: playerDb[pid].thumb
-                            })
+                            });
+
+                            pidFiltered.push(pid);
                         }
                     });
 
-                    pidArray.forEach(function (pid) {
-                        if (playerDb[pid]) {
-                            var index = pidArray.indexOf(pid),
-                                player = videojs.players[pid],
-                                total = pidArray.length,
+                    pidFiltered.forEach(function (pid) {
+                        var index = pidFiltered.indexOf(pid),
+                            player = videojs.players[pid],
+                            total = pidFiltered.length,
 
-                                Button = videojs.getComponent('Button'),
+                            Button = videojs.getComponent('Button'),
 
-                                PrevButton = videojs.extend(Button, {
-                                    constructor: function () {
-                                        Button.apply(this, arguments);
-                                        this.addClass('fas');
-                                        this.addClass('fa-step-backward');
-                                        this.controlText('Previous');
-                                    },
+                            PrevButton = videojs.extend(Button, {
+                                constructor: function () {
+                                    Button.apply(this, arguments);
+                                    this.addClass('fas');
+                                    this.addClass('fa-step-backward');
+                                    this.controlText('Previous');
+                                },
 
-                                    handleClick: function () {
-                                        player.playlist.previous();
-                                    }
-                                }),
+                                handleClick: function () {
+                                    player.playlist.previous();
+                                }
+                            }),
 
-                                NextButton = videojs.extend(Button, {
-                                    constructor: function () {
-                                        Button.apply(this, arguments);
-                                        this.addClass('fas');
-                                        this.addClass('fa-step-forward');
-                                        this.controlText('Next');
-                                    },
+                            NextButton = videojs.extend(Button, {
+                                constructor: function () {
+                                    Button.apply(this, arguments);
+                                    this.addClass('fas');
+                                    this.addClass('fa-step-forward');
+                                    this.controlText('Next');
+                                },
 
-                                    handleClick: function () {
-                                        player.playlist.next();
-                                    }
-                                });
+                                handleClick: function () {
+                                    player.playlist.next();
+                                }
+                            });
 
-                            if (!videojs.getComponent('NextButton')) {
+                        if (player) {
+                            if (!player.getChild('controlBar').getChild('NextButton')) {
                                 videojs.registerComponent('NextButton', NextButton);
                                 videojs.registerComponent('PrevButton', PrevButton);
                                 player.getChild('controlBar').addChild('PrevButton', {}, 0);
@@ -351,21 +354,23 @@ $(function () {
 
                             player.on('playlistitem', function () {
                                 var ind = player.playlist.currentIndex(),
-                                    id = pidArray[ind];
+                                    id = pidFiltered[ind];
 
-                                setOverlay(
-                                    player, ind + 1, total,
-                                    playerDb[id].author, playerDb[id].title
-                                );
+                                if (id) {
+                                    setOverlay(
+                                        player, ind + 1, total,
+                                        playerDb[id].author, playerDb[id].title
+                                    );
 
-                                if (this.hasStarted_) {
-                                    player.userActive(true);
+                                    if (this.hasStarted_) {
+                                        player.userActive(true);
+                                    }
                                 }
                             });
                         }
                     });
                 }
-            }, 500);
+            }, 1000);
 
 
         $playTable.tablesorter({
@@ -404,10 +409,12 @@ $(function () {
 
             if (!playerDb[pid].loaded) {
                 $.get('https://api.streamable.com/videos/' + code, function (data) {
-                    console.log('fired: ' + pid);
+                    // console.log('fired: ' + pid);
                     initPlayer(
                         pid, data.thumbnail_url, data.files.mp4.url, author, data.title
                     );
+                }).fail(function () {
+                    playerDb[pid].error = true;
                 });
             }
 
@@ -418,11 +425,12 @@ $(function () {
             for (var pid in videojs.players) {
                 var vid = videojs.players[pid];
 
-                if (vid) {
+                if (vid && !playerDb[pid].error) {
                     videojs.players[pid].dispose();
-                    playerDb[pid].loaded = false;
-                    console.log('disposed: ' + pid);
+                    // console.log('disposed: ' + pid);
                 }
+
+                playerDb[pid].loaded = false;
             }
         }).on('pagerComplete', function () {
             reloadVideos();
@@ -444,7 +452,7 @@ $(function () {
         });
 
         $('#reload').click(function () {
-           reloadPlayers();
+            reloadPlayers();
         });
     }
 
