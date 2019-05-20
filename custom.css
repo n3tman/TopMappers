@@ -10,7 +10,7 @@ body {
 
 .btn-nav {
     background-color: #f7f7f7;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -72,7 +72,8 @@ h4 .fas {
     width: 65px;
 }
 
-#songs th:nth-child(4) {
+#songs th:nth-child(4),
+#recom th:nth-child(4) {
     width: 500px;
 }
 
@@ -85,12 +86,15 @@ h4 .fas {
 }
 
 #songs td:nth-child(3),
-#mappers td:nth-child(4) {
+#mappers td:nth-child(4),
+#recom td:nth-child(3) {
     font-weight: bold;
 }
 
 #songs td:nth-child(14),
 #songs td:nth-child(18),
+#recom td:nth-child(11),
+#recom td:nth-child(15),
 #mappers td:nth-child(15),
 td:nth-child(16),
 #mappers td:nth-child(19) {
@@ -148,7 +152,9 @@ td:nth-child(16),
 
 #songs td:nth-child(15) a,
 #songs td:nth-child(16) a,
-#mappers td:nth-child(19) a {
+#mappers td:nth-child(19) a,
+#recom td:nth-child(12) a,
+#recom td:nth-child(13) a {
     display: inline-block;
     border-radius: 5px;
     opacity: .8;
@@ -157,7 +163,9 @@ td:nth-child(16),
 
 #songs td:nth-child(15) a:hover,
 #songs td:nth-child(16) a:hover,
-#mappers td:nth-child(19) a:hover {
+#mappers td:nth-child(19) a:hover,
+#recom td:nth-child(12) a:hover,
+#recom td:nth-child(13) a:hover {
     opacity: 1;
 }
 

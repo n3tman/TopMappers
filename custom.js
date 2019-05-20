@@ -31,6 +31,7 @@ $(function () {
     var $mapperTable = $('#mappers'),
         $songTable = $('#songs'),
         $playTable = $('#testplays'),
+        $recomTable = $('#recom'),
         $table;
 
     if ($mapperTable.length) {
@@ -43,6 +44,10 @@ $(function () {
 
     if ($playTable.length) {
         $table = $playTable;
+    }
+
+    if ($recomTable.length) {
+        $table = $recomTable;
     }
 
     $.tablesorter.addWidget({
@@ -167,6 +172,52 @@ $(function () {
                 16: {sorter: false, parser: false, filter: false},
                 17: {sorter: 'text'},
                 18: {sorter: false, parser: false, filter: false}
+            },
+
+            widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
+
+            widgetOptions: {
+                filter_cssFilter: 'form-control',
+                filter_reset: '#reset-filter',
+                filter_searchDelay: 500,
+                filter_placeholder: {
+                    search: 'Num..'
+                },
+                columns: ['secondary', 'tertiary']
+            }
+        });
+    }
+
+    // Tablesorter: recommended maps
+    if ($recomTable.length) {
+        $recomTable.tablesorter({
+            theme: 'bootstrap',
+
+            headerTemplate: '',
+
+            delayInit: true,
+
+            textExtraction: function (node) {
+                return node.textContent || $(node).text() || '';
+            },
+
+            headers: {
+                0: {sorter: false, parser: false, filter: false},
+                1: {sorter: false, parser: false, filter: false},
+                2: {sorter: 'text'},
+                3: {sorter: 'text'},
+                4: {sorter: 'digit', sortInitialOrder: 'desc'},
+                5: {sorter: 'digit', sortInitialOrder: 'desc'},
+                6: {sorter: 'percent', sortInitialOrder: 'desc'},
+                7: {sorter: 'digit', sortInitialOrder: 'desc'},
+                8: {sorter: 'percent', sortInitialOrder: 'desc'},
+                9: {sorter: 'digit', sortInitialOrder: 'desc'},
+                10: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                11: {sorter: false, parser: false, filter: false},
+                12: {sorter: false, parser: false, filter: false},
+                13: {sorter: false, parser: false, filter: false},
+                14: {sorter: 'text'},
+                15: {sorter: false, parser: false, filter: false}
             },
 
             widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
