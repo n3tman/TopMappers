@@ -45,7 +45,7 @@ body {
     background-color: transparent;
 }
 
-.table thead th {
+.table thead div {
     white-space: nowrap;
 }
 
