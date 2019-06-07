@@ -32,7 +32,8 @@ $(function () {
         $songTable = $('#songs'),
         $playTable = $('#testplays'),
         $recomTable = $('#recom'),
-        $table;
+        $table,
+        $copy;
 
     if ($mapperTable.length) {
         $table = $mapperTable;
@@ -87,6 +88,27 @@ $(function () {
             top: 0,
             behavior: 'smooth'
         });
+    });
+
+    $copy = $('.copy');
+
+    $copy.tooltip({
+        trigger: 'manual',
+        title: 'Copied!'
+    }).click(function () {
+        $this = $(this);
+
+        new ClipboardJS('.copy', {
+            text: function (trigger) {
+                return $(trigger).text();
+            }
+        });
+
+        $this.tooltip('show');
+
+        setTimeout(function () {
+            $this.tooltip('hide');
+        }, 1000);
     });
 
     // Tablesorter: top mappers
@@ -157,21 +179,25 @@ $(function () {
                 1: {sorter: false, parser: false, filter: false},
                 2: {sorter: 'text'},
                 3: {sorter: 'text'},
-                4: {sorter: 'text'},
-                5: {sorter: 'digit', sortInitialOrder: 'desc'},
+                4: {sorter: 'countdown', sortInitialOrder: 'desc'},
+                5: {sorter: 'text'},
                 6: {sorter: 'digit', sortInitialOrder: 'desc'},
                 7: {sorter: 'digit', sortInitialOrder: 'desc'},
                 8: {sorter: 'digit', sortInitialOrder: 'desc'},
-                9: {sorter: 'percent', sortInitialOrder: 'desc'},
+                9: {sorter: 'digit', sortInitialOrder: 'desc'},
                 10: {sorter: 'digit', sortInitialOrder: 'desc'},
-                11: {sorter: 'percent', sortInitialOrder: 'desc'},
+                11: {sorter: 'digit', sortInitialOrder: 'desc'},
                 12: {sorter: 'digit', sortInitialOrder: 'desc'},
-                13: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                13: {sorter: 'percent', sortInitialOrder: 'desc'},
                 14: {sorter: 'digit', sortInitialOrder: 'desc'},
-                15: {sorter: false, parser: false, filter: false},
-                16: {sorter: false, parser: false, filter: false},
-                17: {sorter: 'text'},
-                18: {sorter: false, parser: false, filter: false}
+                15: {sorter: 'percent', sortInitialOrder: 'desc'},
+                16: {sorter: 'digit', sortInitialOrder: 'desc'},
+                17: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                18: {sorter: 'digit', sortInitialOrder: 'desc'},
+                19: {sorter: false, parser: false, filter: false},
+                20: {sorter: false, parser: false, filter: false},
+                21: {sorter: 'text'},
+                22: {sorter: false, parser: false, filter: false}
             },
 
             widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
@@ -206,7 +232,7 @@ $(function () {
                 1: {sorter: false, parser: false, filter: false},
                 2: {sorter: 'text'},
                 3: {sorter: 'text'},
-                4: {sorter: 'time', sortInitialOrder: 'desc'},
+                4: {sorter: 'countdown', sortInitialOrder: 'desc'},
                 5: {sorter: 'digit', sortInitialOrder: 'desc'},
                 6: {sorter: 'digit', sortInitialOrder: 'desc'},
                 7: {sorter: 'percent', sortInitialOrder: 'desc'},
