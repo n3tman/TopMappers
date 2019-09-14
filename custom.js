@@ -619,7 +619,7 @@ $(function () {
                             .replace('[{', '[\n{')
                             .replace('}]', '}\n]')],
                         {type: 'application/json;charset=utf-8'}
-                    ), title + ' ' + date + '.json');
+                    ), title + ' ' + date + '.bplist');
 
                     $this.html(mapNum);
                 }, mime);
