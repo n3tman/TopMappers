@@ -89,6 +89,7 @@ h4 .fas {
 }
 
 #songs td:nth-child(2),
+#mappers td:nth-child(2),
 #mappers td:nth-child(4),
 #recom td:nth-child(2) {
     font-weight: bold;
