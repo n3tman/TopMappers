@@ -398,89 +398,89 @@ ul {
 
 /* Sprite */
 
+.bg-alaanor {
+    width: 32px; height: 32px;
+    background: url('/img/sprite.png') -3px -3px;
+}
+
 .bg-andruzz {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -2px -2px;
+    background: url('/img/sprite.png') -41px -3px;
+}
+
+.bg-assist {
+    width: 32px; height: 32px;
+    background: url('/img/sprite.png') -3px -41px;
 }
 
 .bg-balsa {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -38px -2px;
+    background: url('/img/sprite.png') -41px -41px;
 }
 
 .bg-beatsaver {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -2px -38px;
+    background: url('/img/sprite.png') -79px -3px;
 }
 
 .bg-bsaber {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -38px -38px;
+    background: url('/img/sprite.png') -79px -41px;
 }
 
 .bg-elliotttate {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -74px -2px;
+    background: url('/img/sprite.png') -3px -79px;
 }
 
 .bg-ikeiwa {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -74px -38px;
+    background: url('/img/sprite.png') -41px -79px;
 }
 
 .bg-kyle {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -2px -74px;
+    background: url('/img/sprite.png') -79px -79px;
 }
 
 .bg-lolpants {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -38px -74px;
+    background: url('/img/sprite.png') -117px -3px;
 }
 
 .bg-n3tman {
     width: 30px; height: 30px;
-    background: url('/img/sprite.png') -146px -2px;
+    background: url('/img/sprite.png') -155px -3px;
 }
 
 .bg-pbrick {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -74px -74px;
+    background: url('/img/sprite.png') -117px -41px;
 }
 
 .bg-rorekk {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -110px -2px;
-}
-
-.bg-sabersongs {
-    width: 32px; height: 32px;
-    background: url('/img/sprite.png') -110px -38px;
+    background: url('/img/sprite.png') -117px -79px;
 }
 
 .bg-scoresaber {
     width: 32px; height: 31px;
-    background: url('/img/sprite.png') -110px -110px;
+    background: url('/img/sprite.png') -117px -117px;
 }
 
 .bg-skueaks {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -110px -74px;
-}
-
-.bg-stargazer {
-    width: 32px; height: 32px;
-    background: url('/img/sprite.png') -2px -110px;
+    background: url('/img/sprite.png') -3px -117px;
 }
 
 .bg-xyonico {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -38px -110px;
+    background: url('/img/sprite.png') -41px -117px;
 }
 
 .bg-zeekin {
     width: 32px; height: 32px;
-    background: url('/img/sprite.png') -74px -110px;
+    background: url('/img/sprite.png') -79px -117px;
 }
 
 /* VideoJS */
