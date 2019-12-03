@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Top Beat Saber Mappers</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.bootstrap_4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/jquery.tablesorter.pager.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.5.4/video-js.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-overlay@2.1.4/dist/videojs-overlay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/tippy.css" />
+    <link rel="stylesheet" href="/custom.css">
+
+    <meta property="og:site_name" content="TopMappers">
+    <meta property="og:title" content="Top Beat Saber Mappers">
+    <meta property="og:description" content="Mapper stats, playlist generator, pattern painter, recommended maps, ranked boards, testplays archive">
+    <meta property="og:image" content="https://topmappers.nikis.me/img/android-chrome-192x192.png">
+    <meta name="theme-color" content="#E9ECEF">
+</head>
+<body class="d-flex flex-column h-100">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.combined.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/extras/jquery.tablesorter.pager.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/widgets/widget-lazyload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/parsers/parser-duration.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/parsers/parser-input-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script src="/custom.js"></script>
+
+<div class="jumbotron py-4 mb-4 text-center rounded-0">
+    <img src="/img/top-mappers-logo.png" class="img-fluid" alt="Top Mappers Logo">
+</div>
+
+<div class="container-fluid px-4 text-center">
+    <a href="/" class="btn btn-lg btn-outline-dark btn-nav mr-4 mb-4">Top Mappers (1000)</a>
+    <a href="/recommended.html" class="btn btn-lg btn-outline-primary btn-nav mr-4 mb-4">Recommended Maps (1636)</a>
+    <a href="/ranked.html" class="btn btn-lg btn-outline-info btn-nav mr-4 mb-4">Ranked Boards (653)</a>
+    <a href="/testplays.html" class="btn btn-lg btn-outline-success btn-nav mr-4 mb-4">Testplays Archive (2238)</a>
+    <a href="/painter.html" class="btn btn-lg btn-outline-danger btn-nav mb-4">Pattern Painter (New)</a>
+</div>
+
+<div class="container-fluid px-4" id="header">
+    <div class="card-deck">
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-info-circle"></i>About</h4>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li>All stats are accurate (taken directly from the API) on the date of last page update</li>
+                    <li>Stats do not account for map collaborations: uploader gets all the numbers</li>
+                    <li>Click table headers to sort the data; use <strong>Shift+Click</strong> for multi-column sorting, <strong>Ctrl+Click</strong> to reset the order (or just press the blue button)</li>
+                    <li>Filter inputs support multiple comparison operators: read more and see examples <a href="https://mottie.github.io/tablesorter/docs/example-widget-filter.html"  class="external" target="_blank">here</a><br>For example, enter <code>&gt;100</code> in Num column to leave only rows that have values greater than 100<br>To find more than one name in Text column you can input: <code>rayn*|ryg*</code><br>For Date almost any format can be used, e.g. <code>&gt;=2/14/19</code> or <code>&lt;May 2019</code></li>
+                    <li>Updates will be coming every other week, but at least once a month</li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-calendar-check"></i>Page Last Updated: <strong>3 Dec 2019</strong></p>
+            </div>
+        </div>
+        <div class="card shadow-sm global px-0 mx-0">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-globe"></i>Global Stats</h4>
+            </div>
+            <div class="card-body text-total text-center">
+                <p class="mb-2">Total Maps:</p>
+                <p class="h1 mb-4"><span class="badge badge-light">19062</span></p>
+                <p class="mb-2">Total Mappers:</p>
+                <p class="h1 mb-0"><span class="badge badge-light">5448</span></p>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-clock"></i>Since <strong>8 May 2018</strong></p>
+            </div>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h4 class="my-0"><i class="fas fa-users"></i>Credits & Thanks</h4>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li><span class="discord"><i class="bg-zeekin"></i><strong>Zeekin</strong></span> for original idea and inspiration, <span class="discord"><i class="bg-rorekk"></i><strong>rorekk</strong></span> for <strong>Beat Saber Songs</strong> (another inspiration), <span class="discord"><i class="bg-elliotttate"></i><strong>elliotttate</strong></span> for creating <a href="https://bsaber.com/" class="external" target="_blank">BSaber</a> and driving the community forward</li>
+                    <li><span class="discord"><i class="bg-xyonico"></i><strong>xyonico</strong></span> for making SongLoader mod, <span class="discord"><i class="bg-kyle"></i><strong>Kyle 1413</strong></span> for taking over and improving it</li>
+                    <li><span class="discord"><i class="bg-assist"></i><strong>Assistant</strong></span> for <a href="https://github.com/Assistant/MediocreMapAssistant2/releases" class="external" target="_blank">Mediocre Map Assistant 2</a> (and more), <span class="discord"><i class="bg-skueaks"></i><strong>squeaksies</strong></span> for MediocreMapper</a>, <span class="discord"><i class="bg-pbrick"></i><strong>permissionBRICK</strong></span> for EditSaberEnhanced, <span class="discord"><i class="bg-ikeiwa"></i><strong>ikeiwa</strong></span> for EditSaber (original song editor)</li>
+                    <li><span class="discord"><i class="bg-balsa"></i><strong>Balsa</strong></span> for creating <a href="https://beatsaver.com/" class="external" target="_blank">Beat Saver</a>, <span class="discord"><i class="bg-lolpants"></i><strong>lolPants</strong></span> for rewriting it, <span class="discord"><i class="bg-andruzz"></i><strong>andruzzzhka</strong></span> for BeatSaverDownloader mod, <span class="discord"><i class="bg-alaanor"></i><strong>Alaanor</strong></span> for <a href="https://github.com/Alaanor/beatlist/releases" class="external" target="_blank">Beatlist</a> (song and playlist manager)</li>
+                    <li>everyone else mentioned in <a href="https://bsmg.wiki/about" class="external" target="_blank">BSMG Wiki</a> and <strong>all the awesome mappers below!</strong></li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text text-muted"><i class="fas fa-copyright"></i>TopMappers by <span class="discord"><i class="bg-n3tman"></i><strong>Nik</strong>#1471</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-4 my-4">
+    <h1 class="text-center mb-4">Pattern Painter</h1>
+    <div class="card painter">
+        <div class="form-group picker">
+            <label class="form-label"><h5>1. Pick an emoji (or use hotkeys)</h5><em>Press <b>1</b> or <b>2</b> to switch between red and blue</em></label>
+            <div class="wrapper">
+                <table class="grid red active" id="red">
+                    <tr>
+                        <td data-name="noteRUL"><img src="/img/patterns/noteRUL.png"></td>
+                        <td data-name="noteRU"><img src="/img/patterns/noteRU.png"></td>
+                        <td data-name="noteRUR"><img src="/img/patterns/noteRUR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>Q</th>
+                        <th>W</th>
+                        <th>E</th>
+                    </tr>
+                    <tr>
+                        <td data-name="noteRL"><img src="/img/patterns/noteRL.png"></td>
+                        <td data-name="noteRND"><img src="/img/patterns/noteRND.png"></td>
+                        <td data-name="noteRR"><img src="/img/patterns/noteRR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>A</th>
+                        <th>S</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <td data-name="noteRDL"><img src="/img/patterns/noteRDL.png"></td>
+                        <td data-name="noteRD"><img src="/img/patterns/noteRD.png"></td>
+                        <td data-name="noteRDR"><img src="/img/patterns/noteRDR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>Z</th>
+                        <th>X</th>
+                        <th>C</th>
+                    </tr>
+                </table>
+                <table class="grid blue" id="blue">
+                    <tr>
+                        <td data-name="noteBUL"><img src="/img/patterns/noteBUL.png"></td>
+                        <td data-name="noteBU"><img src="/img/patterns/noteBU.png"></td>
+                        <td data-name="noteBUR"><img src="/img/patterns/noteBUR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>Q</th>
+                        <th>W</th>
+                        <th>E</th>
+                    </tr>
+                    <tr>
+                        <td data-name="noteBL"><img src="/img/patterns/noteBL.png"></td>
+                        <td data-name="noteBND"><img src="/img/patterns/noteBND.png"></td>
+                        <td data-name="noteBR"><img src="/img/patterns/noteBR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>A</th>
+                        <th>S</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <td data-name="noteBDL"><img src="/img/patterns/noteBDL.png"></td>
+                        <td data-name="noteBD"><img src="/img/patterns/noteBD.png"></td>
+                        <td data-name="noteBDR"><img src="/img/patterns/noteBDR.png"></td>
+                    </tr>
+                    <tr>
+                        <th>Z</th>
+                        <th>X</th>
+                        <th>C</th>
+                    </tr>
+                </table>
+                <table class="grid other" id="other">
+                    <tr>
+                        <td data-name="Wall"><img src="/img/patterns/Wall.png"></td>
+                    </tr>
+                    <tr>
+                        <th>R</th>
+                    </tr>
+                    <tr>
+                        <td data-name="bomb~1"><img src="/img/patterns/bomb.png"></td>
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                    </tr>
+                    <tr>
+                        <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                    </tr>
+                    <tr>
+                        <th>V</th>
+                    </tr>
+                </table>
+                <table class="grid preview" id="preview">
+                    <tr>
+                        <td class="skip"><img src="/img/patterns/anone.png"></td>
+                    </tr>
+                    <tr>
+                        <th>Selected</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group paint">
+            <label class="form-label">
+                <h5>2. Draw the pattern (grid is resizable)</h5>
+                <em>To <b>erase</b> emoji pick an empty block above (<b>V</b>)</em>
+                <a class="btn btn-sm btn-primary clear" href="#" id="clear">Clear all</a>
+                <a class="btn btn-sm btn-primary reset" href="#" id="reset">Reset to 4x3</a>
+            </label>
+            <div class="wrapper">
+                <div class="grid-wrapper">
+                    <table class="grid">
+                        <tr>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                        </tr>
+                        <tr>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                        </tr>
+                        <tr>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                            <td data-name="anone"><img src="/img/patterns/anone.png"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group result">
+            <label class="form-label" for="result"><h5>3. Copy and paste generated text to Discord</h5><em>You might need to <b>split</b> the long message if you see an error after pasting</em></label>
+            <a class="btn btn-sm btn-primary" href="#" id="copy">Copy to clipboard</a>
+            <textarea class="form-input" id="result" readonly rows="4">:anone::anone::anone::anone:&#13;&#10;:anone::anone::anone::anone:&#13;&#10;:anone::anone::anone::anone:</textarea>
+        </div>
+
+        <div id="wpac-comment"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/tippy.min.js"></script>
+<script src="/scripts/hotkeys.min.js"></script>
+<script src="/scripts/discord.js"></script>
+
+<div class="text-muted py-4 text-center bg-dark mt-auto">
+    <a href="#" id="scroll-top" class="h4 text-light"><i class="fas fa-chevron-up"></i> Back to Top <i class="fas fa-chevron-up"></i></a>
+</div>
+</body>
+</html>

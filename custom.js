@@ -528,16 +528,18 @@ $(function () {
         });
     }
 
-    $table.tablesorterPager({
-        container: $('.ts-pager'),
-        cssGoto: '.pagenum',
-        size: $playTable.length ? 8 : 15,
-        output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
-    });
+    if ($table) {
+        $table.tablesorterPager({
+            container: $('.ts-pager'),
+            cssGoto: '.pagenum',
+            size: $playTable.length ? 8 : 15,
+            output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+        });
 
-    $table.on('pagerChange sortEnd filterEnd', function () {
-        $(window).trigger('scroll');
-    });
+        $table.on('pagerChange sortEnd filterEnd', function () {
+            $(window).trigger('scroll');
+        });
+    }
 
     if ($mapperTable.length) {
         // Popovers with playlist data

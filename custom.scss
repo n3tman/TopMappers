@@ -525,6 +525,131 @@ ul {
     box-shadow: 0 .2rem .2rem rgba(0, 123, 255, .4) !important;
 }
 
+/**
+    Discord Emojis
+ */
+
+.painter {
+    & {
+        background-color: rgba(white, 0.4);
+        padding: .8rem;
+        user-select: none;
+    }
+
+    .body {
+        border-top: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-wrapper {
+        overflow: hidden;
+    }
+
+    .label {
+        margin-bottom: .5rem;
+    }
+
+    .form-group {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        padding: 0 0 .8rem 0;
+    }
+
+    .form-group.paint {
+        margin-top: 1rem;
+    }
+
+    .form-group.result {
+        margin-top: 1.5rem;
+    }
+
+    .result .form-input {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        font-family: monospace;
+        text-align: center;
+    }
+
+    .grid {
+        border-collapse: collapse;
+        box-sizing: content-box;
+    }
+
+    .grid:not(.preview) img {
+        width: 48px;
+        height: 48px;
+        display: block;
+        pointer-events: none;
+    }
+
+    .grid.preview img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .grid + .grid {
+        margin-left: 35px;
+    }
+
+    td, th {
+        box-sizing: content-box;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+    }
+
+    td {
+        border: 1px solid #040F26;
+    }
+
+    td.active {
+        border-color: #32b643;
+        border-style:double;
+    }
+
+    th {
+        font-weight: normal;
+    }
+
+    .preview td {
+        width: 128px;
+        height: 128px;
+    }
+
+    td:hover {
+        cursor: pointer;
+        background-color: lightgray;
+    }
+
+    .btn {
+        margin-left: 1rem;
+    }
+
+    .red th, .blue th {
+        opacity: 0;
+    }
+
+    .grid.active th {
+        opacity: 1;
+    }
+
+    .ui-resizable-e,
+    .ui-resizable-s {
+        background-color: rgba(#32b643, .5);
+    }
+}
+
 @media (min-width: 576px) {
     .card-deck {
         flex-flow: column nowrap;

@@ -536,6 +536,105 @@ ul {
   box-shadow: 0 0.2rem 0.2rem rgba(0, 123, 255, 0.4) !important;
 }
 
+/**
+    Discord Emojis
+ */
+.painter {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0.8rem;
+  user-select: none;
+}
+.painter .body {
+  border-top: 0;
+  padding: 0;
+  margin: 0;
+}
+.painter .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.painter .grid-wrapper {
+  overflow: hidden;
+}
+.painter .label {
+  margin-bottom: 0.5rem;
+}
+.painter .form-group {
+  text-align: center;
+  margin-bottom: 0;
+}
+.painter .form-label {
+  padding: 0 0 0.8rem 0;
+}
+.painter .form-group.paint {
+  margin-top: 1rem;
+}
+.painter .form-group.result {
+  margin-top: 1.5rem;
+}
+.painter .result .form-input {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  font-family: monospace;
+  text-align: center;
+}
+.painter .grid {
+  border-collapse: collapse;
+  box-sizing: content-box;
+}
+.painter .grid:not(.preview) img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  pointer-events: none;
+}
+.painter .grid.preview img {
+  display: block;
+  margin: 0 auto;
+}
+.painter .grid + .grid {
+  margin-left: 35px;
+}
+.painter td, .painter th {
+  box-sizing: content-box;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+}
+.painter td {
+  border: 1px solid #040F26;
+}
+.painter td.active {
+  border-color: #32b643;
+  border-style: double;
+}
+.painter th {
+  font-weight: normal;
+}
+.painter .preview td {
+  width: 128px;
+  height: 128px;
+}
+.painter td:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+.painter .btn {
+  margin-left: 1rem;
+}
+.painter .red th, .painter .blue th {
+  opacity: 0;
+}
+.painter .grid.active th {
+  opacity: 1;
+}
+.painter .ui-resizable-e,
+.painter .ui-resizable-s {
+  background-color: rgba(50, 182, 67, 0.5);
+}
+
 @media (min-width: 576px) {
   .card-deck {
     flex-flow: column nowrap;
