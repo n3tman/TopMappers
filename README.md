@@ -1,2 +1,2 @@
 # TopMappers
-Top Beat Saber Mappers page: https://topmappers.nikis.me
+Top Beat Saber Mappers page: https://n3tman.github.io/TopMappers/
