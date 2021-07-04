@@ -542,7 +542,7 @@ $(function () {
 
     if ($mapperTable.length) {
         // Popovers with playlist data
-        $.getJSON('/data/playlists.json', function (data) {
+        $.getJSON('data/playlists.json', function (data) {
             var badgeSelector = '[data-lists]';
 
             $('body').on('click', badgeSelector, function (e) {
@@ -581,7 +581,7 @@ $(function () {
         });
 
         // Playlist generator
-        $.getJSON('/data/maps.json', function (data) {
+        $.getJSON('data/maps.json', function (data) {
             var downloadSelector = '.download';
 
             $('body').on('click', downloadSelector, function (e) {

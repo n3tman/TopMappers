@@ -7,11 +7,11 @@
 
     <title>Top Beat Saber Mappers</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.bootstrap_4.min.css">
@@ -21,12 +21,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-overlay@2.1.4/dist/videojs-overlay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/tippy.css" />
-    <link rel="stylesheet" href="/custom.css">
+    <link rel="stylesheet" href="custom.css">
 
     <meta property="og:site_name" content="TopMappers">
     <meta property="og:title" content="Top Beat Saber Mappers">
     <meta property="og:description" content="Mapper stats, playlist generator, pattern painter, ranked boards, testplays archive">
-    <meta property="og:image" content="https://topmappers.nikis.me/img/android-chrome-192x192.png">
+    <meta property="og:image" content="https://n3tman.github.io/TopMappers/img/android-chrome-192x192.png">
     <meta name="theme-color" content="#E9ECEF">
 </head>
 <body class="d-flex flex-column h-100">
@@ -40,18 +40,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/parsers/parser-input-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-<script src="/custom.js"></script>
+<script src="custom.js"></script>
 
 <div class="jumbotron py-4 mb-4 text-center rounded-0">
-    <img src="/img/top-mappers-logo.png" class="img-fluid" alt="Top Mappers Logo">
+    <img src="img/top-mappers-logo.png" class="img-fluid" alt="Top Mappers Logo">
 </div>
 
 <div class="container-fluid px-4 text-center">
-    <a href="/" class="btn btn-lg btn-outline-dark btn-nav mr-4 mb-4">Top Mappers (1000)</a>
-    <!--<a href="/recommended.html" class="btn btn-lg btn-outline-primary btn-nav mr-4 mb-4">Recommended Maps (1636)</a>-->
-    <a href="/ranked.html" class="btn btn-lg btn-outline-info btn-nav mr-4 mb-4">Ranked Boards (682)</a>
-    <a href="/testplays.html" class="btn btn-lg btn-outline-success btn-nav mr-4 mb-4">Testplays Archive (2107)</a>
-    <a href="/painter.html" class="btn btn-lg btn-outline-danger btn-nav mb-4">Pattern Painter (New)</a>
+    <a href="" class="btn btn-lg btn-outline-dark btn-nav mr-4 mb-4">Top Mappers (1000)</a>
+    <!--<a href="recommended.html" class="btn btn-lg btn-outline-primary btn-nav mr-4 mb-4">Recommended Maps (1636)</a>-->
+    <a href="ranked.html" class="btn btn-lg btn-outline-info btn-nav mr-4 mb-4">Ranked Boards (682)</a>
+    <a href="testplays.html" class="btn btn-lg btn-outline-success btn-nav mr-4 mb-4">Testplays Archive (2107)</a>
+    <a href="painter.html" class="btn btn-lg btn-outline-danger btn-nav mb-4">Pattern Painter (New)</a>
 </div>
 
 <div class="container-fluid px-4" id="header">
@@ -106,9 +106,10 @@
         </div>
     </div>
 </div>
+
 <div class="container-fluid px-4 my-4">
     <div class="table-buttons mb-4 text-center">
-        <a href="/archive/2019-12-03.html" id="previous" class="btn btn-lg btn-outline-secondary">Previous Update (2019-12-03)</a>
+        <a href="archive/2019-12-03.html" id="previous" class="btn btn-lg btn-outline-secondary">Previous Update (2019-12-03)</a>
         <div class="btn-group">
             <button type="button" class="btn btn-lg btn-primary" id="reset-sort">Reset Sorting</button>
             <button type="button" class="btn btn-lg btn-info" id="reset-filter">Reset Filters</button>
@@ -21174,6 +21175,7 @@
         </table>
     </div>
 </div>
+
 
 <div class="text-muted py-4 text-center bg-dark mt-auto">
     <a href="#" id="scroll-top" class="h4 text-light"><i class="fas fa-chevron-up"></i> Back to Top <i class="fas fa-chevron-up"></i></a>
