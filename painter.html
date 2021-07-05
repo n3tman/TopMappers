@@ -25,7 +25,7 @@
 
     <meta property="og:site_name" content="TopMappers">
     <meta property="og:title" content="Top Beat Saber Mappers">
-    <meta property="og:description" content="Mapper stats, playlist generator, pattern painter, ranked boards, testplays archive">
+    <meta property="og:description" content="Mapper stats, playlist generator, pattern painter">
     <meta property="og:image" content="https://n3tman.github.io/TopMappers/img/android-chrome-192x192.png">
     <meta name="theme-color" content="#E9ECEF">
 </head>
@@ -47,11 +47,11 @@
 </div>
 
 <div class="container-fluid px-4 text-center">
-    <a href="index.html" class="btn btn-lg btn-outline-dark btn-nav mr-4 mb-4">Top Mappers (1000)</a>
+    <a href="index.html" class="btn btn-lg btn-outline-dark btn-nav mr-4 mb-4">Top 1000 Mappers</a>
     <!--<a href="recommended.html" class="btn btn-lg btn-outline-primary btn-nav mr-4 mb-4">Recommended Maps (1636)</a>-->
-    <a href="ranked.html" class="btn btn-lg btn-outline-info btn-nav mr-4 mb-4">Ranked Boards (682)</a>
-    <a href="testplays.html" class="btn btn-lg btn-outline-success btn-nav mr-4 mb-4">Testplays Archive (2107)</a>
-    <a href="painter.html" class="btn btn-lg btn-outline-danger btn-nav mb-4">Pattern Painter (New)</a>
+    <!--<a href="ranked.html" class="btn btn-lg btn-outline-info btn-nav mr-4 mb-4">Ranked Boards (682)</a>-->
+    <!--<a href="testplays.html" class="btn btn-lg btn-outline-success btn-nav mr-4 mb-4">Testplays Archive (2107)</a>-->
+    <a href="painter.html" class="btn btn-lg btn-outline-danger btn-nav mb-4">Pattern Painter (for Discord)</a>
 </div>
 
 <div class="container-fluid px-4" id="header">
@@ -62,15 +62,15 @@
             </div>
             <div class="card-body">
                 <ul class="mb-0">
-                    <li>All stats are accurate (taken directly from the API) on the date of last page update</li>
+                    <li>All stats are accurate (taken from scraped data) on the date of last page update</li>
                     <li>Stats do not account for map collaborations: uploader gets all the numbers</li>
                     <li>Click table headers to sort the data; use <strong>Shift+Click</strong> for multi-column sorting, <strong>Ctrl+Click</strong> to reset the order (or just press the blue button)</li>
                     <li>Filter inputs support multiple comparison operators: read more and see examples <a href="https://mottie.github.io/tablesorter/docs/example-widget-filter.html"  class="external" target="_blank">here</a><br>For example, enter <code>&gt;100</code> in Num column to leave only rows that have values greater than 100<br>To find more than one name in Text column you can input: <code>rayn*|ryg*</code><br>For Date almost any format can be used, e.g. <code>&gt;=2/14/19</code> or <code>&lt;May 2019</code></li>
-                    <li>Updates are manual and will be coming... probably</li>
+                    <li>Updates are manual and will be coming every once in a while</li>
                 </ul>
             </div>
             <div class="card-footer text-center">
-                <p class="card-text text-muted"><i class="fas fa-calendar-check"></i>Page Last Updated: <strong>28 Dec 2019</strong></p>
+                <p class="card-text text-muted"><i class="fas fa-calendar-check"></i>Page Last Updated: <strong>5 Jul 2021</strong></p>
             </div>
         </div>
         <div class="card shadow-sm global px-0 mx-0">
@@ -79,9 +79,9 @@
             </div>
             <div class="card-body text-total text-center">
                 <p class="mb-2">Total Maps:</p>
-                <p class="h1 mb-4"><span class="badge badge-light">20051</span></p>
+                <p class="h1 mb-4"><span class="badge badge-light">47376</span></p>
                 <p class="mb-2">Total Mappers:</p>
-                <p class="h1 mb-0"><span class="badge badge-light">5584</span></p>
+                <p class="h1 mb-0"><span class="badge badge-light">10492</span></p>
             </div>
             <div class="card-footer text-center">
                 <p class="card-text text-muted"><i class="fas fa-clock"></i>Since <strong>8 May 2018</strong></p>
@@ -94,9 +94,8 @@
             <div class="card-body">
                 <ul class="mb-0">
                     <li><span class="discord"><i class="bg-zeekin"></i><strong>Zeekin</strong></span> for original idea and inspiration, <span class="discord"><i class="bg-rorekk"></i><strong>rorekk</strong></span> for <strong>Beat Saber Songs</strong> (another inspiration), <span class="discord"><i class="bg-elliotttate"></i><strong>elliotttate</strong></span> for creating <a href="https://bsaber.com/" class="external" target="_blank">BSaber</a> and driving the community forward</li>
-                    <li><span class="discord"><i class="bg-xyonico"></i><strong>xyonico</strong></span> for making SongLoader mod, <span class="discord"><i class="bg-kyle"></i><strong>Kyle 1413</strong></span> for taking over and improving it</li>
-                    <li><span class="discord"><i class="bg-assist"></i><strong>Assistant</strong></span> for <a href="https://github.com/Assistant/MediocreMapAssistant2/releases" class="external" target="_blank">Mediocre Map Assistant 2</a> (and more), <span class="discord"><i class="bg-skueaks"></i><strong>squeaksies</strong></span> for MediocreMapper</a>, <span class="discord"><i class="bg-pbrick"></i><strong>permissionBRICK</strong></span> for EditSaberEnhanced, <span class="discord"><i class="bg-ikeiwa"></i><strong>ikeiwa</strong></span> for EditSaber (original song editor)</li>
-                    <li><span class="discord"><i class="bg-balsa"></i><strong>Balsa</strong></span> for creating <a href="https://beatsaver.com/" class="external" target="_blank">Beat Saver</a>, <span class="discord"><i class="bg-lolpants"></i><strong>lolPants</strong></span> for rewriting it, <span class="discord"><i class="bg-andruzz"></i><strong>andruzzzhka</strong></span> for BeatSaverDownloader mod, <span class="discord"><i class="bg-alaanor"></i><strong>Alaanor</strong></span> for <a href="https://github.com/Alaanor/beatlist/releases" class="external" target="_blank">Beatlist</a> (song and playlist manager)</li>
+                    <li><span class="discord"><i class="bg-assist"></i><strong>Assistant</strong></span> for <a href="https://git.bsmg.dev/Top_Cat/MediocreMapAssistant2" class="external" target="_blank">Mediocre Map Assistant 2</a> (and more), <span class="discord"><i class="bg-skueaks"></i><strong>squeaksies</strong></span> for MediocreMapper</a>, <span class="discord"><i class="bg-pbrick"></i><strong>permissionBRICK</strong></span> for EditSaberEnhanced, <span class="discord"><i class="bg-ikeiwa"></i><strong>ikeiwa</strong></span> for EditSaber (original song editor)</li>
+                    <li><span class="discord"><i class="bg-balsa"></i><strong>Balsa</strong></span> for creating <a href="https://beatsaver.com/" class="external" target="_blank">Beat Saver</a>, <span class="discord"><i class="bg-lolpants"></i><strong>lolPants</strong></span> for rewriting it</li>
                     <li>everyone else mentioned in <a href="https://bsmg.wiki/about" class="external" target="_blank">BSMG Wiki</a> and <strong>all the awesome mappers below!</strong></li>
                 </ul>
             </div>

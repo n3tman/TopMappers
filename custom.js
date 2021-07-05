@@ -137,13 +137,12 @@ $(function () {
                 9: {sorter: 'percent', sortInitialOrder: 'desc'},
                 10: {sorter: 'digit', sortInitialOrder: 'desc'},
                 11: {sorter: 'digit', sortInitialOrder: 'desc'},
-                12: {sorter: 'digit', sortInitialOrder: 'desc'},
-                13: {sorter: 'usLongDate'},
-                14: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                12: {sorter: 'usLongDate'},
+                13: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
+                14: {sorter: 'digit', sortInitialOrder: 'desc'},
                 15: {sorter: 'digit', sortInitialOrder: 'desc'},
-                16: {sorter: 'digit', sortInitialOrder: 'desc'},
-                17: {sorter: false, parser: false, filter: false},
-                18: {sorter: false, parser: false, filter: false}
+                16: {sorter: false, parser: false, filter: false},
+                17: {sorter: false, parser: false, filter: false}
             },
 
             widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
@@ -589,7 +588,7 @@ $(function () {
                     mapperName = getMapperName($this),
                     avatarUrl = getAvatarUrl($this),
                     ext = avatarUrl.split('.')[2],
-                    corsUrl = 'https://cors-anywhere.herokuapp.com/',
+                    corsUrl = 'https://cors.bridged.cc/',
                     uniqueUrl = corsUrl + avatarUrl + '?' + Date.now() + getRandomInt(1000),
                     mapNum = this.innerText,
                     title = 'Maps by ' + mapperName + ' (' + mapNum + ' Total)',
