@@ -137,12 +137,13 @@ $(function () {
                 9: {sorter: 'percent', sortInitialOrder: 'desc'},
                 10: {sorter: 'digit', sortInitialOrder: 'desc'},
                 11: {sorter: 'digit', sortInitialOrder: 'desc'},
-                12: {sorter: 'usLongDate'},
-                13: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
-                14: {sorter: 'digit', sortInitialOrder: 'desc'},
+                12: {sorter: 'digit', sortInitialOrder: 'desc'},
+                13: {sorter: 'usLongDate'},
+                14: {sorter: 'usLongDate', sortInitialOrder: 'desc'},
                 15: {sorter: 'digit', sortInitialOrder: 'desc'},
-                16: {sorter: false, parser: false, filter: false},
-                17: {sorter: false, parser: false, filter: false}
+                16: {sorter: 'digit', sortInitialOrder: 'desc'},
+                17: {sorter: false, parser: false, filter: false},
+                18: {sorter: false, parser: false, filter: false}
             },
 
             widgets: ['lazyload', 'filter', 'columns', 'zebra', 'numbering'],
