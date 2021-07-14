@@ -95,52 +95,46 @@ h4 .fas {
     font-weight: bold;
 }
 
-#songs td:nth-child(14),
-#songs td:nth-child(18),
-#recom td:nth-child(10),
-#recom td:nth-child(14),
-#mappers td:nth-child(15),
-td:nth-child(16),
-#mappers td:nth-child(19) {
+#mappers td {
     white-space: nowrap;
 }
 
-#mappers td:nth-child(13) .badge,
-#mappers td:nth-child(20) .badge {
+#mappers td:nth-child(12) .badge,
+#mappers td:nth-child(19) .badge {
     padding: .4em;
 }
 
-#mappers td:nth-child(13) .badge {
+#mappers td:nth-child(12) .badge {
     width: 55px;
 }
 
-#mappers td:nth-child(20) .badge {
+#mappers td:nth-child(19) .badge {
     width: 85px;
 }
 
-#mappers td:nth-child(13) .badge::after,
-#mappers td:nth-child(20) .badge::after,
-#mappers td:nth-child(20) .badge::before,
+#mappers td:nth-child(12) .badge::after,
+#mappers td:nth-child(19) .badge::after,
+#mappers td:nth-child(19) .badge::before,
 .external::after {
     font-family: 'Font Awesome 5 Free', sans-serif;
     font-size: 0.8rem;
 }
 
-#mappers td:nth-child(13) .badge::after,
-#mappers td:nth-child(20) .badge::after {
+#mappers td:nth-child(12) .badge::after,
+#mappers td:nth-child(19) .badge::after {
     padding-left: 8px;
 }
 
-#mappers td:nth-child(20) .badge::before {
+#mappers td:nth-child(19) .badge::before {
     content: '\f5fd';
     padding-right: 8px;
 }
 
-#mappers td:nth-child(13) .badge::after {
+#mappers td:nth-child(12) .badge::after {
     content: '\f0c9';
 }
 
-#mappers td:nth-child(20) .badge::after {
+#mappers td:nth-child(19) .badge::after {
     content: '\f019';
 }
 
@@ -156,7 +150,7 @@ td:nth-child(16),
 
 #songs td:nth-child(16) a,
 #songs td:nth-child(17) a,
-#mappers td:nth-child(19) a,
+#mappers td:nth-child(18) a,
 #recom td:nth-child(11) a,
 #recom td:nth-child(12) a {
     display: inline-block;
@@ -167,7 +161,7 @@ td:nth-child(16),
 
 #songs td:nth-child(16) a:hover,
 #songs td:nth-child(17) a:hover,
-#mappers td:nth-child(19) a:hover,
+#mappers td:nth-child(18) a:hover,
 #recom td:nth-child(11) a:hover,
 #recom td:nth-child(12) a:hover {
     opacity: 1;
